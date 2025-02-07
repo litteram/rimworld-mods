@@ -6,6 +6,14 @@
     </mods>
     <caseTrue>
 
+      <!-- Fix Log Double Beds! -->
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/ThingDef[defName="DankPyon_BedLogDouble"]</xpath>
+        <value>
+          <researchPrerequisites Inherit="false" />
+        </value>
+      </li>
+
       <li Class="XmlExtensions.OptionalPatch">
         <modId>zenlor.MOTweaks</modId>
         <key>mot-workbench-recipes</key>

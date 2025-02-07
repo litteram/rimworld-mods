@@ -28,18 +28,18 @@
         <xpath>Defs/ThingDef[
           defName="ASF_SmallLogPile" or
           defName="ASF_LargeLogPile"
-        ]/building/defaultStorageSettings/filter/thingsDefs/li</xpath>
+        ]/building/defaultStorageSettings/filter/thingsDefs</xpath>
         <value>
-          <li>DankPyon_RawWood</li>
+          <thingDefs><li>DankPyon_RawWood</li></thingDefs>
         </value>
       </li>
       <li Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[
           defName="ASF_SmallLogPile" or
           defName="ASF_LargeLogPile"
-        ]/building/fixedStorageSettings/filter/thingsDefs/li</xpath>
+        ]/building/fixedStorageSettings/filter/thingsDefs</xpath>
         <value>
-          <li>DankPyon_RawWood</li>
+          <thingDefs><li>DankPyon_RawWood</li></thingDefs>
         </value>
       </li>
 
@@ -47,12 +47,11 @@
       <!-- fuel -->
       <li Class="PatchOperationAdd">
         <xpath>Defs/ThingDef[
-          defName="ASF_StoragePit" or
-          defName="ASF_SmallLogPile" or
-          defName="ASF_LargeLogPile"
+          defName="ASF_StoragePit"
         ]/comps/li[Class="CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
         <value>
           <li>DankPyon_RawWood</li>
+          <li>DankPyon_Coal</li>
         </value>
       </li>
 

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
   <Operation Class="XmlExtensions.FindMod">
+    <success>Always</success>
     <mods>
       <li>Medieval Overhaul</li>
       <li>Vanilla Factions Expanded - Tribals</li>
@@ -299,6 +300,7 @@
           </li>
 
           <li Class="PatchOperationAdd">
+            <success>Always</success>
             <xpath>Defs/ResearchProjectDef[defName="DankPyon_Lumber" and not(prerequisites)]</xpath>
             <value>
               <prerequisites>
@@ -334,11 +336,9 @@
 
           <li Class="PatchOperationAdd">
             <success>Always</success>
-            <xpath>Defs/ResearchProjectDef[not(prerequisites) and not(defName="VFET_Fire")]</xpath>
+            <xpath>Defs/ResearchProjectDef[not(prerequisites) and not(defName="VFET_Fire")]/hiddenPrerequisites</xpath>
             <value>
-              <prerequisites>
-                <li>VFET_Culture</li>
-              </prerequisites>
+              <li>VFET_Culture</li>
             </value>
           </li>
 

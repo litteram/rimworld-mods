@@ -36,6 +36,7 @@
     <li>notfood.mendandrecycle</li>
     <li>JKN.AdobeAbode</li>
     <li>zal.advanceddeepdrill</li>
+    <li>Adaptive.PrimitiveStorage</li>
   </loadAfter>
   <loadBefore>
     <li>Ogam.Rimedieval</li>
