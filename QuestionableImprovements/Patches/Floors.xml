@@ -20,7 +20,7 @@
             or @ParentName="NaturalTerrainBase"
               ]/statBases</xpath>
             <value>
-              <MarketValue>{floorCost}</MarketValue>
+              <MarketValue>{basicsFloorCost}</MarketValue>
             </value>
           </Operation>
         </apply>
