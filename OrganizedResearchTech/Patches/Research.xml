@@ -158,32 +158,21 @@
         </operations>
       </li>
       <!-- Ultra -->
-      <li Class="PatchOperationSequence">
-        <success>Always</success>
-        <operations>
           <li Class="PatchOperationConditional">
+        <!-- <success>Always</success> -->
             <xpath>Defs/ResearchProjectDef[
             techLevel="Ultra" or techLevel="ultra"
             and not(tab="Anomaly")
             ]/tab</xpath>
-            <match Class="PatchOperationRemove">
+            <match Class="PatchOperationReplace">
               <xpath>Defs/ResearchProjectDef[
               techLevel="Ultra" or techLevel="ultra"
               and not(tab="Anomaly")
               ]/tab</xpath>
+            <value><tab>SRT_UltraResearch</tab></value>
             </match>
           </li>
-          <li Class="PatchOperationAdd">
-            <xpath>Defs/ResearchProjectDef[
-            techLevel="Ultra" or techLevel="ultra"
-            and not(tab="Anomaly")
-            ]</xpath>
-            <value>
-              <tab>SRT_UltraResearch</tab>
-            </value>
-          </li>
-        </operations>
-      </li>
+
       <!--
           Expansions
       -->
