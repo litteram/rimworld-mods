@@ -23,7 +23,10 @@
         </value>
       </li>
 
+
+      <!-- NOTE: Already includes RawWood now -->
       <!-- storage settings for wood piles -->
+      <!--
       <li Class="PatchOperationReplace">
         <xpath>Defs/ThingDef[
           defName="ASF_SmallLogPile" or
@@ -42,13 +45,12 @@
           <thingDefs><li>DankPyon_RawWood</li></thingDefs>
         </value>
       </li>
+      -->
 
 
       <!-- fuel -->
       <li Class="PatchOperationAdd">
-        <xpath>Defs/ThingDef[
-          defName="ASF_StoragePit"
-        ]/comps/li[Class="CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
+        <xpath>Defs/ThingDef[defName="ASF_StoragePit"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
         <value>
           <li>DankPyon_RawWood</li>
           <li>DankPyon_Coal</li>
@@ -56,41 +58,50 @@
       </li>
 
       <!-- research -->
-      <li Class="XmlExtensions.PatchOperationAddOrReplace">
-        <xpath>Defs/ResearchProjectDef[defName="ASF_MeatRack"]/prerequisites</xpath>
+      <li Class="PatchOperationAdd">
+        <xpath>Defs/ThingDef[defName="ASF_MeatRack"]</xpath>
         <value>
-          <li>VFET_Hunting</li>
+          <researchPrerequisites>
+            <li MayRequire="OskarPotocki.VFE.Tribals">VFET_Hunting</li>
+          </researchPrerequisites>
         </value>
       </li>
 
+      <!-- <li Class="XmlExtensions.PatchOperationAddOrReplace"> -->
+        <!-- <xpath>Defs/ThingDef[defName="ASF_MeatRack"]/researchPrerequisites</xpath> -->
+        <!-- <value> -->
+            <!-- <li MayRequire="OskarPotocki.VFE.Tribals">VFET_Hunting</li> -->
+        <!-- </value> -->
+      <!-- </li> -->
+
       <li Class="XmlExtensions.PatchOperationAddOrReplace">
-        <xpath>Defs/ResearchProjectDef[
+        <xpath>Defs/ThingDef[
           defName="ASF_WovenBasket" or
           defName="ASF_WovenBasketDouble" or
           defName="ASF_WovenBasketTriple"
-        ]</xpath>
+        ]/researchPrerequisites</xpath>
         <value>
-          <li>VFET_Agriculture</li>
+          <li MayRequire="OskarPotocki.VFE.Tribals">VFET_Agriculture</li>
         </value>
       </li>
 
       <li Class="XmlExtensions.PatchOperationAddOrReplace">
-        <xpath>Defs/ResearchProjectDef[defName="ASF_Granary"]</xpath>
+        <xpath>Defs/ThingDef[defName="ASF_Granary"]/researchPrerequisites</xpath>
         <value>
-          <li>VFET_Construction</li>
-          <li>VFET_Agriculture</li>
+          <li MayRequire="OskarPotocki.VFE.Tribals">VFET_Construction</li>
+          <li MayRequire="OskarPotocki.VFE.Tribals">VFET_Agriculture</li>
         </value>
       </li>
 
       <li Class="XmlExtensions.PatchOperationAddOrReplace">
-        <xpath>Defs/ResearchProjectDef[
+        <xpath>Defs/ThingDef[
           defName="ASF_WeaponRack" or
           defName="ASF_ClayPotCovered" or
           defName="ASF_ClayPotUncovered" or
           defName="ASF_CellarStone"
-        ]</xpath>
+        ]/researchPrerequisites</xpath>
         <value>
-          <li>VFET_Culture</li>
+          <li MayRequire="OskarPotocki.VFE.Tribals">VFET_Culture</li>
         </value>
       </li>
 
