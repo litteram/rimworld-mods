@@ -8,7 +8,7 @@
 
       <li Class="XmlExtensions.OptionalPatch">
         <modId>zenlor.MOTweaks</modId>
-        <key>mot-workbench-recipes</key>
+        <key>mot-milkable-rox</key>
         <defaultValue>true</defaultValue>
         <caseTrue>
 
