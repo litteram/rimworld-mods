@@ -229,6 +229,13 @@
             <defaultValue>True</defaultValue>
             <tooltip>Move Windows research to Medieval, changed recipes to using Iron Ingots and Steel Ingots</tooltip>
           </li>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <label>Adaptive Primitive Storage</label>
+            <key>mot-integration-adaptive-primitive-storage</key>
+            <defaultValue>True</defaultValue>
+            <tooltip>Enable recipe changes for some Adaptive Primitive Storage storage solutions. Storage Pit, Log Piles.</tooltip>
+          </li>
         </settings>
       </li>
 
@@ -265,6 +272,13 @@
             <label>research tree</label>
             <key>mot-integration-vfetribal-research</key>
             <defaultValue>True</defaultValue>
+          </li>
+        
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <label>Adaptive Primitive Storage</label>
+            <key>mot-integration-adaptive-primitive-storage-vfetribal</key>
+            <defaultValue>True</defaultValue>
+            <tooltip>Add some research prerequisites to storage solutions.</tooltip>
           </li>
         </settings>
       </li>
