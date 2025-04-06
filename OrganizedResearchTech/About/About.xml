@@ -27,5 +27,14 @@ Split research by tech level.
     <li>vanillaexpanded.vchemfuele</li>
     <li>vanillaexpanded.vfepropsanddecor</li>
     <li>hlx.UltratechAlteredCarbon</li>
+    <li>lts.I</li>
   </loadAfter>
+  <modDependencies>
+    <li>
+      <packageId>imranfish.xmlextensions</packageId>
+      <displayName>XML Extensions</displayName>
+      <downloadUrl>https://github.com/15adhami/XmlExtensions/releases</downloadUrl>
+      <steamWorkshopUrl>steam://url/CommunityFilePage/2574315206</steamWorkshopUrl>
+    </li>
+  </modDependencies>
 </ModMetaData>
