@@ -2,7 +2,7 @@
   description = "rimworld mods";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     flakelight.url = "github:nix-community/flakelight";
   };
 
@@ -18,8 +18,6 @@
           # mono stuff
           ilspycmd
           avalonia-ilspy
-          msbuild
-          mono
           omnisharp-roslyn # lsp
           dotnet-sdk
           ];
