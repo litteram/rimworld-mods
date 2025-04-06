@@ -3,9 +3,9 @@
 
   <RecipeDef>
     <defName>Make_ComponentIndustrialternive</defName>
-    <label>scavenge a component</label>
+    <label>scavenge component</label>
     <description>Makes a component. Since the machining table doesn't have the adequate tools to create components, this recipe is inefficient, requiring nearly double the amount of steel.</description>
-    <jobString>Scavenging a component.</jobString>
+    <jobString>Scavenging component.</jobString>
     <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
     <soundWorking>Recipe_Machining</soundWorking>

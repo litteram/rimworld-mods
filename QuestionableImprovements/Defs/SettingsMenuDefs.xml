@@ -80,6 +80,7 @@
           <li Class="XmlExtensions.Setting.Text">
             <text>Leader: {ideologyAbilityCooldownLeader} (default: 1)</text>
             <tooltip>Ideoligion Leader Cooldown multiplier. Eg: 0.5 will set the cooldown to half of the default value.</tooltip>
+            <keys><li>ideologyAbilityCooldownLeader</li></keys>
           </li>
           <li Class="XmlExtensions.Setting.Slider">
             <key>ideologyAbilityCooldownLeader</key>
@@ -91,6 +92,7 @@
           <li Class="XmlExtensions.Setting.Text">
             <text>Moral guide: {ideologyAbilityCooldownMoralist} (default: 1)</text>
             <tooltip>Ideoligion Moral Guide Cooldown multiplier. Eg: 0.5 will set the cooldown to half of the default value.</tooltip>
+            <keys><li>ideologyAbilityCooldownMoralist</li></keys>
           </li>
           <li Class="XmlExtensions.Setting.Slider">
             <key>ideologyAbilityCooldownMoralist</key>
@@ -102,6 +104,7 @@
           <li Class="XmlExtensions.Setting.Text">
             <text>Secondary roles: {ideologyAbilityCooldownMultiRole} (default: 1)</text>
             <tooltip>Ideoligion generic roles (eg: Production Specialist) Cooldown multiplier. Eg: 0.5 will set the cooldown to half of the default value.</tooltip>
+            <keys><li>ideologyAbilityCooldownMultiRole</li></keys>
           </li>
           <li Class="XmlExtensions.Setting.Slider">
             <key>ideologyAbilityCooldownMultiRole</key>
@@ -115,7 +118,7 @@
             <text>Ritual conversion power</text>
           </li>
           <li Class="XmlExtensions.Setting.Slider">
-            <label>Conversion power multiplier</label>
+            <label>Conversion power multiplier: {ideologyConversionPower}</label>
             <key>ideologyConversionPower</key>
             <defaultValue>1</defaultValue>
             <min>0.1</min>

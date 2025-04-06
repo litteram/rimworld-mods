@@ -13,7 +13,6 @@
 
         <li Class="PatchOperationReplace">
           <xpath>/Defs/ThingDef[
-            defName="Fence" or
             defName="VFEArch_ChainlinkFence" or
             defName="VFEArch_PicketFence" or
             defName="VFEArch_BrickFence"
@@ -25,7 +24,6 @@
           </li>
         <li Class="PatchOperationRemove">
           <xpath>/Defs/ThingDef[
-            defName="Fence" or
             defName="VFEArch_ChainlinkFence" or
             defName="VFEArch_PicketFence" or
             defName="VFEArch_BrickFence"
