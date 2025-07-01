@@ -24,5 +24,8 @@
     <defName>SRT_UltraResearch</defName>
     <label>Ultra</label>
   </ResearchTabDef>
+  <ResearchTabDef>
+    <defName>SRT_ArchotechResearch</defName>
+    <label>Archotech</label>
+  </ResearchTabDef>
 </Defs>
-

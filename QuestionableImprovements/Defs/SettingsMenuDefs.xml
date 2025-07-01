@@ -35,6 +35,15 @@
             <decimals>1</decimals>
           </li>
           <li Class="XmlExtensions.Setting.Gap"/>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>basicsMetalsDontBurn</key>
+            <label>Metals are not flammable</label>
+            <defaultValue>true</defaultValue>
+            <tooltip>I tried very hard to burn a piece of steel, I could not.</tooltip>
+          </li>
+          <li Class="XmlExtensions.Setting.Gap"/>
+
           <li Class="XmlExtensions.Setting.Checkbox">
             <key>basicsFloorCostEnabled</key>
             <label>adjust floor cost</label>

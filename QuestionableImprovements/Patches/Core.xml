@@ -20,4 +20,17 @@
       </Operation>
     </caseTrue>
   </Operation>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>zenlor.QuestionableImprovements</modId>
+    <key>basicsMetalsDontBurn</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Steel" or defName="Silver" or defName="Gold" or defName="Plasteel" or defName="Uranium"]/stuffProps/statFactors/Flammability</xpath>
+        <value><Flammability>0.0</Flammability></value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
 </Patch>
