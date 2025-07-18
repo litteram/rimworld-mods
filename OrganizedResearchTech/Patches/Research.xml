@@ -91,6 +91,7 @@
       <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
         <xmlDoc>ResearchProjects</xmlDoc>
         <xpath>ResearchProjects/ResearchProjectDef[techLevel="Spacer"]</xpath>
+        <success>Always</success>
         <value>
           <tab>SRT_SpacerResearch</tab>
         </value>
@@ -100,6 +101,7 @@
       <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
         <xmlDoc>ResearchProjects</xmlDoc>
         <xpath>ResearchProjects/ResearchProjectDef[techLevel="Ultra"]</xpath>
+        <success>Always</success>
         <value>
           <tab>SRT_UltraResearch</tab>
         </value>
@@ -109,6 +111,7 @@
       <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
         <xmlDoc>ResearchProjects</xmlDoc>
         <xpath>ResearchProjects/ResearchProjectDef[techLevel="Archotech"]</xpath>
+        <success>Always</success>
         <value>
           <tab>SRT_ArchotechResearch</tab>
         </value>
@@ -141,20 +144,30 @@
       </Operation>
 
       <!-- Remove tabs -->
-      <Operation Class="PatchOperationAttributeSet">
-        <success>Always</success>
-        <xpath>Defs/ResearchTabDef[
-        not(defName="Main") and
-        not(defName="SRT_MedievalResearch") and
-        not(defName="SRT_IndustrialResearch") and
-        not(defName="SRT_IndustrialResearchI") and
-        not(defName="SRT_IndustrialResearchII") and
-        not(defName="SRT_SpacerResearch") and
-        not(defName="SRT_UltraResearch") and
-        not(defName="Anomaly")
-        ]</xpath>
-        <attribute>Abstract</attribute>
-        <value>True</value>
+
+      <Operation Class="XmlExtensions.OptionalPatch">
+        <modId>zenlor.OrganizedResearchTech</modId>
+        <key>ort-brutal-tab-deletion</key>
+        <defaultValue>false</defaultValue>
+        <caseTrue>
+
+          <Operation Class="PatchOperationAttributeSet">
+            <success>Always</success>
+            <xpath>Defs/ResearchTabDef[
+            not(defName="Main") and
+            not(defName="SRT_MedievalResearch") and
+            not(defName="SRT_IndustrialResearch") and
+            not(defName="SRT_IndustrialResearchI") and
+            not(defName="SRT_IndustrialResearchII") and
+            not(defName="SRT_SpacerResearch") and
+            not(defName="SRT_UltraResearch") and
+            not(defName="Anomaly")
+            ]</xpath>
+            <attribute>Abstract</attribute>
+            <value>True</value>
+          </Operation>
+
+        </caseTrue>
       </Operation>
 
       <!-- Schematics (books) -->
