@@ -18,12 +18,7 @@
           # mono stuff
           ilspycmd
           avalonia-ilspy
-          omnisharp-roslyn # lsp
-          dotnet-sdk
-          ];
-          devShell.env= pkgs: {
-          DOTNET_ROOT = "${pkgs.dotnet-sdk}";
-        };
+        ];
     });
 }
 

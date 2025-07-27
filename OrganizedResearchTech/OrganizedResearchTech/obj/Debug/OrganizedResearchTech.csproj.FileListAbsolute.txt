@@ -1,0 +1,6 @@
+/media/pny/SteamLibrary/steamapps/common/RimWorld/Mods/OrganizedResearchTech/OrganizedResearchTech/obj/Debug/OrganizedResearchTech.csproj.CoreCompileInputs.cache
+/media/pny/SteamLibrary/steamapps/common/RimWorld/Mods/OrganizedResearchTech/OrganizedResearchTech/bin/Debug/OrganizedResearchTech.dll
+/media/pny/SteamLibrary/steamapps/common/RimWorld/Mods/OrganizedResearchTech/OrganizedResearchTech/bin/Debug/OrganizedResearchTech.pdb
+/media/pny/SteamLibrary/steamapps/common/RimWorld/Mods/OrganizedResearchTech/OrganizedResearchTech/obj/Debug/OrganizedResearchTech.csproj.AssemblyReference.cache
+/media/pny/SteamLibrary/steamapps/common/RimWorld/Mods/OrganizedResearchTech/OrganizedResearchTech/obj/Debug/OrganizedResearchTech.dll
+/media/pny/SteamLibrary/steamapps/common/RimWorld/Mods/OrganizedResearchTech/OrganizedResearchTech/obj/Debug/OrganizedResearchTech.pdb
