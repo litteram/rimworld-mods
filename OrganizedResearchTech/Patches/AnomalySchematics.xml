@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>Anomaly</li>
+        </mods>
+        <logic>and</logic>
+        <caseTrue> 
+
+            <!-- Schematics (books) -->
+            <Operation Class="XmlExtensions.CreateDocument">
+                <docName>ResSchematics</docName>
+                <xpath>/Defs/ThingDef[defName="Schematic" or defName="Tome" or defName=""]</xpath>
+            </Operation>
+
+            <Operation Class="XmlExtensions.PatchOperationSafeReplace">
+                <xmlDoc>ResSchematics</xmlDoc>
+                <xpath>ResSchematics/ThingDef[defName="Schematic"]/comps/li[@Class="CompProperties_Book"]/doers/li[@Class="BookOutcomeProperties_GainResearch"]/tabs</xpath>
+                <value>
+                    <tabs>
+                        <Main/>
+                        <SRT_MedievalResearch/>
+                        <SRT_IndustrialResearch/>
+                        <SRT_IndustrialResearchI/>
+                        <SRT_IndustrialResearchII/>
+                        <SRT_SpacerResearch/>
+                        <SRT_UltraResearch/>
+                        <SRT_ArchotechResearch/>
+                    </tabs>
+                </value>
+            </Operation>
+
+            <Operation Class="XmlExtensions.PatchOperationReplace">
+                <xmlDoc>ResSchematics</xmlDoc>
+                <xpath>ResSchematics/ThingDef[defName="Tome"]/comps/li[@Class="CompProperties_Book"]/doers/li[@Class="BookOutcomeProperties_GainAnomalyResearch"]/tabs</xpath>
+                <value>
+                    <tabs><Anomaly /></tabs>
+                </value>
+            </Operation>
+
+            <Operation Class="XmlExtensions.MergeDocument">
+                <docName>ResSchematics</docName>
+            </Operation>
+        </caseTrue>
+    </Operation>
+
+</Patch>
+

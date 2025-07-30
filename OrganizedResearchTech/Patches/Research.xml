@@ -1,22 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
       <Operation Class="XmlExtensions.CreateDocument">
-        <docName>AnomalyResearch</docName>
-        <xpath>Defs/ResearchProjectDef[knowledgeCost]</xpath>
-      </Operation>
-
-      <Operation Class="XmlExtensions.CreateDocument">
         <docName>ResearchProjects</docName>
         <xpath>Defs/ResearchProjectDef[not(knowledgeCost)]</xpath>
-      </Operation>
-
-      <!-- fix anomaly mods -->
-      <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.anomaly">
-        <xmlDoc>AnomalyResearch</xmlDoc>
-        <xpath>AnomalyResearch/ResearchProjectDef</xpath>
-        <value>
-          <tab>Anomaly</tab>
-        </value>
       </Operation>
 
       <!-- Neolithic -->
@@ -141,74 +127,6 @@
         <value>
           <tab>SRT_UltraResearch</tab>
         </value>
-      </Operation>
-
-      <!-- Remove tabs -->
-
-      <Operation Class="XmlExtensions.OptionalPatch">
-        <modId>zenlor.OrganizedResearchTech</modId>
-        <key>ort-brutal-tab-deletion</key>
-        <defaultValue>false</defaultValue>
-        <caseTrue>
-
-          <Operation Class="PatchOperationAttributeSet">
-            <success>Always</success>
-            <xpath>Defs/ResearchTabDef[
-            not(defName="Main") and
-            not(defName="SRT_MedievalResearch") and
-            not(defName="SRT_IndustrialResearch") and
-            not(defName="SRT_IndustrialResearchI") and
-            not(defName="SRT_IndustrialResearchII") and
-            not(defName="SRT_SpacerResearch") and
-            not(defName="SRT_UltraResearch") and
-            not(defName="Anomaly")
-            ]</xpath>
-            <attribute>Abstract</attribute>
-            <value>True</value>
-          </Operation>
-
-        </caseTrue>
-      </Operation>
-
-      <!-- Schematics (books) -->
-      <Operation Class="XmlExtensions.CreateDocument">
-        <docName>ResSchematics</docName>
-        <xpath>/Defs/ThingDef[defName="Schematic" or defName="Tome" or defName=""]</xpath>
-      </Operation>
-
-      <Operation Class="XmlExtensions.PatchOperationSafeReplace">
-        <xmlDoc>ResSchematics</xmlDoc>
-        <xpath>ResSchematics/ThingDef[defName="Schematic"]/comps/li[@Class="CompProperties_Book"]/doers/li[@Class="BookOutcomeProperties_GainResearch"]/tabs</xpath>
-        <value>
-          <tabs>
-            <Main/>
-            <SRT_MedievalResearch/>
-            <SRT_IndustrialResearch/>
-            <SRT_IndustrialResearchI/>
-            <SRT_IndustrialResearchII/>
-            <SRT_SpacerResearch/>
-            <SRT_UltraResearch/>
-            <SRT_ArchotechResearch/>
-          </tabs>
-        </value>
-      </Operation>
-
-      <Operation Class="XmlExtensions.PatchOperationReplace">
-        <xmlDoc>ResSchematics</xmlDoc>
-        <xpath>ResSchematics/ThingDef[defName="Tome"]/comps/li[@Class="CompProperties_Book"]/doers/li[@Class="BookOutcomeProperties_GainAnomalyResearch"]/tabs</xpath>
-        <value>
-          <tabs>
-            <Anomaly />
-          </tabs>
-        </value>
-      </Operation>
-
-      <Operation Class="XmlExtensions.MergeDocument">
-        <docName>ResSchematics</docName>
-      </Operation>
-
-      <Operation Class="XmlExtensions.MergeDocument">
-        <docName>AnomalyResearch</docName>
       </Operation>
 
       <Operation Class="XmlExtensions.MergeDocument">
