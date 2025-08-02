@@ -9,8 +9,6 @@ using UnityEngine;
 
 namespace OrganizedResearchTech
 {
-    // ReSharper disable once UnusedType.Global
-    [StaticConstructorOnStartup]
     public class OrganizedResearchTech : Mod
     {
         public OrganizedResearchTech(ModContentPack content) : base(content)
