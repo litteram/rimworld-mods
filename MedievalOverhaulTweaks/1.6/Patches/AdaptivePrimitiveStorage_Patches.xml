@@ -57,6 +57,7 @@
           <!-- fuel -->
           <li Class="PatchOperationAdd">
             <xpath>Defs/ThingDef[defName="ASF_StoragePit"]/comps/li[@Class="CompProperties_Refuelable"]/fuelFilter/thingDefs</xpath>
+            <success>Always</success>
             <value>
               <li>DankPyon_RawWood</li>
               <li>DankPyon_Coal</li>
@@ -90,12 +91,14 @@
             <!-- </value> -->
           <!-- </li> -->
 
+          <!-- FIXME: probably old version -->
           <li Class="XmlExtensions.PatchOperationAddOrReplace">
             <xpath>Defs/ThingDef[
               defName="ASF_WovenBasket" or
               defName="ASF_WovenBasketDouble" or
               defName="ASF_WovenBasketTriple"
             ]/researchPrerequisites</xpath>
+            <success>Always</success>
             <value>
               <li MayRequire="OskarPotocki.VFE.Tribals">VFET_Agriculture</li>
             </value>
