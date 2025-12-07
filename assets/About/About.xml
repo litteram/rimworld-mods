@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+    <name>assets</name>
+    <author>nobody</author>
+    <description>just some assets</description>
+    <packageId>nobody.assets</packageId>
+    <supportedVersions>
+        <li>1.6</li>
+    </supportedVersions>
+    <loadAfter>
+        <li>Ludeon.RimWorld</li>
+    </loadAfter>
+</ModMetaData>
