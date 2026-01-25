@@ -48,7 +48,6 @@ Noble
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[defName="Baseliner" or
                                                           defName="Neanderthal" or
-                                                          defName="Hussar" or
                                                           defName="Yattakin" or
                                                           defName="Waster" or
                                                           defName="Sanguophage" or

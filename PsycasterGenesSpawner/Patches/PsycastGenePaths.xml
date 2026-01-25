@@ -3,49 +3,35 @@
   <!--
       VPE Ranger
   -->
-  <Operation Class="PatchOperationAdd" MayRequire="aranmaho.rangerclass">
-    <xpath>/Defs/VanillaPsycastExpanded.PsycasterpathDef[defName="Makai_Ranger"]</xpath>
-    <value>
-      <lockedReason>Lack of psycaster gene</lockedReason>
-      <requiredGene>
-        <GeneDef>Gene_Ranger</GeneDef>
-      </requiredGene>
-    </value>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>VPE - Ranger</li>
+    </mods>
+    <match Class="PatchOperationAdd" MayRequire="aranmaho.rangerclass">
+      <xpath>/Defs/VanillaPsycastsExpanded.PsycasterPathDef[defName="Makai_Ranger"]</xpath>
+      <value>
+        <lockedReason>Lack of psycaster gene</lockedReason>
+        <requiredGene>
+          <GeneDef>Gene_Ranger</GeneDef>
+        </requiredGene>
+      </value>
+    </match>
   </Operation>
   <!--
       Stunskip
   -->
-  <Operation Class="PatchOperationReplace" MayRequire="rabbit.stuncastervpe3">
-    <xpath>/Defs/VanillaPsycastExpanded.PsycasterpathDef[defName="VPEStunskipPath"]</xpath>
-    <value>
-      <lockedReason>Lack of psycaster gene</lockedReason>
-      <requiredGene>
-        <GeneDef>Gene_Stunskip</GeneDef>
-      </requiredGene>
-    </value>
-  </Operation>
-  <!--
-      Puppeteer
-  -->
-  <Operation Class="PatchOperationSequence" MayRequire="VanillaExpanded.VPE.Puppeteer">
-    <operations>
-      <li Class="PatchOperationReplace">
-        <xpath>/Defs/VanillaPsycastExpanded.PsycasterpathDef[defName="VPEP_Puppeteer"]/lockedReason</xpath>
-        <value>
-          <lockedReason>Lack of psycaster gene</lockedReason>
-        </value>
-      </li>
-      <li Class="PatchOperationAdd">
-        <xpath>/Defs/VanillaPsycastExpanded.PsycasterpathDef[defName="VPEP_Puppeteer"]</xpath>
-        <value>
-          <requiredGene>
-            <GeneDef>Gene_Puppeteer</GeneDef>
-          </requiredGene>
-        </value>
-      </li>
-      <li Class="PatchOperationRemove">
-        <xpath>/Defs/VanillaPsycastExpanded.PsycasterpathDef[defName="VPEP_Puppeteer"]/requiredBackstoriesAny</xpath>
-      </li>
-    </operations>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Edge of Descension - Stuncaster 3.0</li>
+    </mods>
+    <match Class="PatchOperationAdd">
+      <xpath>/Defs/VanillaPsycastsExpanded.PsycasterPathDef[defName="VPEStunskipPath"]</xpath>
+      <value>
+        <lockedReason>Lack of psycaster gene</lockedReason>
+        <requiredGene>
+          <GeneDef>Gene_Stunskip</GeneDef>
+        </requiredGene>
+      </value>
+    </match>
   </Operation>
 </Patch>

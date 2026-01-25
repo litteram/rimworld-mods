@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
-  <GeneDef ParentName="GenePsycastBase" MayRequire="rabbit.stuncastervpe3">
+  <GeneDef ParentName="GenePsycastBase">
     <defName>Gene_Stunskip</defName>
     <label>Stunskip</label>
     <labelShortAdj>Stuncaster</labelShortAdj>

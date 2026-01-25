@@ -121,4 +121,52 @@
       </li>
     </Groups>
   </SpawnThoseGenes.SpawnThoseGenesXenotypes>
+  <!--
+    Phytokin
+  -->
+  <SpawnThoseGenes.SpawnThoseGenesXenotypes MayRequire="vanillaracesexpanded.phytokin">
+    <defName>VRE_Animakin</defName>
+    <Groups>
+      <li>
+        <Endogenes>
+          <Gene_Wildspeaker>1</Gene_Wildspeaker>
+        </Endogenes>
+      </li>
+      <li>
+        <Endogenes>
+          <Gene_Empath>0.2</Gene_Empath>
+        </Endogenes>
+      </li>
+    </Groups>
+  </SpawnThoseGenes.SpawnThoseGenesXenotypes>
+  <SpawnThoseGenes.SpawnThoseGenesXenotypes MayRequire="vanillaracesexpanded.phytokin">
+    <defName>VRE_Gauranlenkin</defName>
+    <Groups>
+      <li>
+        <Endogenes>
+          <Gene_Wildspeaker>1</Gene_Wildspeaker>
+        </Endogenes>
+      </li>
+      <li>
+        <Endogenes>
+          <Gene_Empath>0.2</Gene_Empath>
+        </Endogenes>
+      </li>
+    </Groups>
+  </SpawnThoseGenes.SpawnThoseGenesXenotypes>
+  <SpawnThoseGenes.SpawnThoseGenesXenotypes MayRequire="vanillaracesexpanded.phytokin">
+    <defName>VRE_Poluxkin</defName>
+    <Groups>
+      <li>
+        <Endogenes>
+          <Gene_Wildspeaker>1</Gene_Wildspeaker>
+        </Endogenes>
+      </li>
+      <li>
+        <Endogenes>
+          <Gene_Empath>0.2</Gene_Empath>
+        </Endogenes>
+      </li>
+    </Groups>
+  </SpawnThoseGenes.SpawnThoseGenesXenotypes>
 </Defs>

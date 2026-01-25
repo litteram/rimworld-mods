@@ -33,6 +33,7 @@
     <li>VanillaExpanded.VPE.Hemosage</li>
     <li>VanillaExpanded.VPE.Puppeteer</li>
     <li>aranmaho.rangerclass</li>
+    <li>Rabbit.eodstuncasterv3</li>
   </loadAfter>
   <incompatibleWith>
     <li>seromas.BiotechIntegrationTweaks</li>
@@ -50,12 +51,9 @@
     - Neanderthal
     - Impid
     - Yattakin
-    - Garunleankin (VRE)
-    - Animakin (VRE)
-    - Wolfman (VRE)
-    - Lycan (VRE)
-    - Boarskin (VRE)
-    - Pigskin
+    - VRE Phytokin: Garunleankin, Animakin, Poluxkin
+    - VRE Lycanthrope: Lycan, Wolfman
+    - VRE Pigskins: Pigskin, Boarskin
 
     Aggressive pawns:
     - Hussar (only if they are not Psychically Dull or Deaf)
@@ -82,8 +80,6 @@
     a random level 1 ability.
 
     Added gene support for paths:
-    - VPE Hemosage
-    - VPE Puppeteer
     - VPE - Ranger
     - Edge of descension - Stuncaster 3.0
 
