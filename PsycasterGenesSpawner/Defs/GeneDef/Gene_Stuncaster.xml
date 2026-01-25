@@ -5,7 +5,7 @@
     <label>Stunskip</label>
     <labelShortAdj>Stuncaster</labelShortAdj>
     <description>Carriers of this gene can learn the Stuncaster psycasting path.</description>
-    <iconPath>Gene_Stunskip</iconPath>
+    <iconPath>GeneDef/Gene_Stunskip</iconPath>
     <displayOrderInCategory>522</displayOrderInCategory>
     <marketValueFactor>3</marketValueFactor>
   </GeneDef>

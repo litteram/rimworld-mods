@@ -51,7 +51,7 @@
     <defName>PGS_ConflagratorPsychicAmplifier</defName>
     <label>Conflagrator psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Conflagrator</texPath>
+      <texPath>ThingDef/Psylink_Conflagrator</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -65,7 +65,7 @@
     <defName>PGS_ArchonPsychicAmplifier</defName>
     <label>Archon psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Archon</texPath>
+      <texPath>ThingDef/Psylink_Archon</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -79,7 +79,7 @@
     <defName>PGS_ChronopathPsychicAmplifier</defName>
     <label>Chronopath psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Chronopath</texPath>
+      <texPath>ThingDef/Psylink_Chronopath</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -93,7 +93,7 @@
     <defName>PGS_EmpathPsychicAmplifier</defName>
     <label>Empath psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Empath</texPath>
+      <texPath>ThingDef/Psylink_Empath</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -107,7 +107,7 @@
     <defName>PGS_FrostshaperPsychicAmplifier</defName>
     <label>Frostshaper psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Frostshaper</texPath>
+      <texPath>ThingDef/Psylink_Frostshaper</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -121,7 +121,7 @@
     <defName>PGS_HarmonistPsychicAmplifier</defName>
     <label>Harmonist psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Harmonist</texPath>
+      <texPath>ThingDef/Psylink_Harmonist</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -135,7 +135,7 @@
     <defName>PGS_NecropathPsychicAmplifier</defName>
     <label>Necropath psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Necropath</texPath>
+      <texPath>ThingDef/Psylink_Necropath</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -149,7 +149,7 @@
     <defName>PGS_NightstalkerPsychicAmplifier</defName>
     <label>Nightstalker psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Nightstalker</texPath>
+      <texPath>ThingDef/Psylink_Nightstalker</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -163,7 +163,7 @@
     <defName>PGS_ProtectorPsychicAmplifier</defName>
     <label>Protector psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Protector</texPath>
+      <texPath>ThingDef/Psylink_Protector</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -177,7 +177,7 @@
     <defName>PGS_SkipmasterPsychicAmplifier</defName>
     <label>Skipmaster psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Skipmaster</texPath>
+      <texPath>ThingDef/Psylink_Skipmaster</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -191,7 +191,7 @@
     <defName>PGS_StaticlordPsychicAmplifier</defName>
     <label>Staticlord psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Staticlord</texPath>
+      <texPath>ThingDef/Psylink_Staticlord</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -205,7 +205,7 @@
     <defName>PGS_TechnomancerPsychicAmplifier</defName>
     <label>Technomancer psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Technomancer</texPath>
+      <texPath>ThingDef/Psylink_Technomancer</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -219,7 +219,7 @@
     <defName>PGS_WarlordPsychicAmplifier</defName>
     <label>Warlord psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Warlord</texPath>
+      <texPath>ThingDef/Psylink_Warlord</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -233,7 +233,7 @@
     <defName>PGS_WildspeakerPsychicAmplifier</defName>
     <label>Wildspeaker psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Wildspeaker</texPath>
+      <texPath>ThingDef/Psylink_Wildspeaker</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -247,7 +247,7 @@
     <defName>PGS_PuppeteerPsychicAmplifier</defName>
     <label>Puppeteer psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Puppeteer</texPath>
+      <texPath>ThingDef/Psylink_Puppeteer</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -257,11 +257,11 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="ElementalNeuroformerBase" MayRequire="Rabbit.eodstuncasterv3">
+  <ThingDef ParentName="ElementalNeuroformerBase" MayRequire="rabbit.eodstuncasterv3">
     <defName>PGS_StunskipPsychicAmplifier</defName>
     <label>Stunskip psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Stunskip</texPath>
+      <texPath>ThingDef/Psylink_Stunskip</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
@@ -271,11 +271,11 @@
       </li>
     </comps>
   </ThingDef>
-  <ThingDef ParentName="ElementalNeuroformerBase" MayRequire="Rabbit.eodstuncasterv3">
+  <ThingDef ParentName="ElementalNeuroformerBase" MayRequire="aranmaho.rangerclass">
     <defName>PGS_RangerPsychicAmplifier</defName>
     <label>Ranger psylink neuroformer</label>
     <graphicData>
-      <texPath>Psylink_Ranger</texPath>
+      <texPath>ThingDef/Psylink_Ranger</texPath>
       <graphicClass>Graphic_Single</graphicClass>
     </graphicData>
     <comps>
