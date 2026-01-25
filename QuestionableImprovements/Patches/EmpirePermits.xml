@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Patch>
+  <Operation MayRequire="ludeon.RimWorld.Royalty" Class="XmlExtensions.UseSetting">
+    <modId>zenlor.QuestionableImprovements</modId>
+    <key>royaltyPermitsCooldownMulti</key>
+    <defaultValue>1</defaultValue>
+    <apply>
+
+      <Operation Class="XmlExtensions.PatchOperationMath">
+        <xpath>/Defs/RoyalTitlePermitDef/cooldownDays</xpath>
+        <value>{royaltyPermitsCooldownMulti}</value>
+        <operation>*</operation>
+      </Operation>
+
+    </apply>
+  </Operation>
+
+  <Operation MayRequire="ludeon.RimWorld.Royalty" Class="XmlExtensions.UseSetting">
+    <modId>zenlor.QuestionableImprovements</modId>
+    <key>royaltyTitlePointsMulti</key>
+    <defaultValue>1</defaultValue>
+    <apply>
+
+      <Operation Class="XmlExtensions.PatchOperationMath">
+        <xpath>/Defs/RoyalTitleDef/permitPointsAwarded</xpath>
+        <value>{royaltyTitlePointsMulti}</value>
+        <operation>*</operation>
+      </Operation>
+
+    </apply>
+  </Operation>
+</Patch>

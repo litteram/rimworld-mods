@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="VFECore.PatchOperationToggableSequence">
+        <enabled>True</enabled>
+        <mods>
+            <li>Medieval Overhaul</li>
+            <li>Medieval Lighting and Heat</li>
+        </mods>
+        <label>Medieval Lighting and Heat, MO recipes:</label>
+        <operations>
+
+            <li Class="PatchOperationAdd">
+                <xpath>Defs/ThingDef[defName="MLH_Bonfire"]</xpath>
+                <value>
+                    <stuffCategories>
+                        <li>DankPyon_RawWood</li>
+                        <li>Woody</li>
+                    </stuffCategories>
+                    <costStuffCount>20</costStuffCount>
+                </value>
+            </li>
+
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/ThingDef[defName="MLH_Bonfire"]/constructEffect</xpath>
+            </li>
+
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/ThingDef[defName="MLH_Bonfire"]/costList</xpath>
+            </li>
+
+            <li Class="PatchOperationRemove">
+                <xpath>Defs/ThingDef[defName="MLH_Bonfire"]/uiIconPath</xpath>
+            </li>
+
+        </operations>
+    </Operation>
+</Patch>

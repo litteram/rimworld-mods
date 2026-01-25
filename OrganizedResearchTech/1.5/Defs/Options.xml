@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <XmlExtensions.SettingsMenuDef>
+    <defName>zenlorOrganizedResearchTech</defName>
+    <modId>zenlor.OrganizedResearchTech</modId>
+    <label>OrganizedResearchTech</label>
+    <settings>
+
+      <!-- Generic Patches {{{ -->
+      <li Class="XmlExtensions.Setting.Gap" />
+      <li Class="XmlExtensions.Setting.Text">
+        <text>Harmful patches!</text>
+        <font>Medium</font>
+        <anchor>Middle</anchor>
+      </li>
+
+      <li Class="XmlExtensions.Setting.Section">
+        <settings>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <label>Brutally Delete Tabs</label>
+            <key>ort-brutal-tab-deletion</key>
+            <defaultValue>False</defaultValue>
+            <tooltip>Enable brutal deletion of existing mod tabs. Beware: errors will show up!</tooltip>
+          </li>
+
+        </settings>
+      </li>
+      <!-- }}} -->
+    </settings>
+  </XmlExtensions.SettingsMenuDef>
+</Defs>

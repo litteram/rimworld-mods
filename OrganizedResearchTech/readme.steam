@@ -1,0 +1,30 @@
+[h1]Split research by tech level[/h1]
+
+Features:
+[list]
+[*] All tabs are removed
+[*] New tabs for each tech level
+[*] New Animal (dummy) research
+[/list]
+
+Tech levels:
+
+[list]
+[*] Main
+[*] Anomaly (when the DLC is enabled)
+[*] Neolithic
+[*] Medieval
+[*] Industrial
+[*] Hi-Tech
+[*] Silicon
+[*] Spacer
+[*] Ultra
+[/list]
+
+Note: in vanilla RimWorld, [b]Ultra[/b] tech level is only available for DLC content
+
+[h2]For your own sanity use Organized Research Tab[/h2]
+
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=2606510510][img]https://steamuserimages-a.akamaihd.net/ugc/2446090369829225841/9A6FE352935800205CAFAD33A8C93B51CE6D691B/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false[/img][/url]
+
+[url=https://github.com/litteram/rimworld-mods]Github Source[/url]

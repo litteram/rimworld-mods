@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[
+      defName="Baseliner" or
+      defName="Neanderthal"
+    ]/Groups</xpath>
+    <value>
+      <li>
+        <Endogenes>
+          <Skin_InkBlack>0.008</Skin_InkBlack>
+          <Skin_Blue>0.008</Skin_Blue>
+          <Skin_DeepRed>0.008</Skin_DeepRed>
+          <Skin_DeepYellow>0.008</Skin_DeepYellow>
+          <Skin_Green>0.008</Skin_Green>
+          <Skin_InkBlack>0.008</Skin_InkBlack>
+          <Skin_LightGray>0.008</Skin_LightGray>
+          <Skin_Orange>0.008</Skin_Orange>
+          <Skin_PaleRed>0.008</Skin_PaleRed>
+          <Skin_Purple>0.008</Skin_Purple>
+          <Skin_SheerWhite>0.008</Skin_SheerWhite>
+          <Skin_SlateGray>0.008</Skin_SlateGray>
+          <Skin_Melanin1>0.1</Skin_Melanin1>
+          <Skin_Melanin2>0.1</Skin_Melanin2>
+          <Skin_Melanin3>0.1</Skin_Melanin3>
+          <Skin_Melanin4>0.1</Skin_Melanin4>
+          <Skin_Melanin5>0.1</Skin_Melanin5>
+          <Skin_Melanin6>0.1</Skin_Melanin6>
+          <Skin_Melanin7>0.1</Skin_Melanin7>
+          <Skin_Melanin8>0.1</Skin_Melanin8>
+          <Skin_Melanin9>0.1</Skin_Melanin9>
+        </Endogenes>
+      </li>
+    </value>
+  </Operation>
+</Patch>

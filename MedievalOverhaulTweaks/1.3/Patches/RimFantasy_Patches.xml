@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Medieval Overhaul</li>
+            <li>Medieval Overhaul (unofficial)</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>RimFantasy - Gemstones</li>
+            </mods>
+            <match Class="PatchOperationSequence">
+                <operations>
+                    <li Class="PatchOperationAdd">
+                        <xpath>/Defs</xpath>
+                        <value>
+                            <RecipeDef ParentName="DankPyon_MineShaftBase">
+                                <defName>MOT_RF_MakeOre_RoughAmethyst</defName>
+                                <workAmount>1800</workAmount>
+                                <label>Mine rough Amethyst</label>
+                                <jobString>Mining Rough Amethyst.</jobString>
+                                <products>
+                                    <RF_RoughAmethyst>2</RF_RoughAmethyst>
+                                </products>
+                            </RecipeDef>
+
+                            <RecipeDef ParentName="DankPyon_MineShaftBase">
+                                <defName>MOT_RF_MakeOre_RoughDiamond</defName>
+                                <workAmount>1800</workAmount>
+                                <label>Mine rough Diamond</label>
+                                <jobString>Mining Rough Diamond.</jobString>
+                                <products>
+                                    <RF_RoughDiamond>2</RF_RoughDiamond>
+                                </products>
+                            </RecipeDef>
+
+                            <RecipeDef ParentName="DankPyon_MineShaftBase">
+                                <defName>MOT_RF_MakeOre_RoughRuby</defName>
+                                <workAmount>1800</workAmount>
+                                <label>Mine rough Ruby</label>
+                                <jobString>Mining Rough Ruby.</jobString>
+                                <products>
+                                    <RF_RoughRuby>2</RF_RoughRuby>
+                                </products>
+                            </RecipeDef>
+
+                            <RecipeDef ParentName="DankPyon_MineShaftBase">
+                                <defName>MOT_RF_MakeOre_RoughCarnelian</defName>
+                                <workAmount>1800</workAmount>
+                                <label>Mine rough Carnelian</label>
+                                <jobString>Mining Rough Carnelian.</jobString>
+                                <products>
+                                    <RF_RoughCarnelian>2</RF_RoughCarnelian>
+                                </products>
+                            </RecipeDef>
+
+                            <RecipeDef ParentName="DankPyon_MineShaftBase">
+                                <defName>MOT_RF_MakeOre_RoughCitrine</defName>
+                                <workAmount>1800</workAmount>
+                                <label>Mine rough Citrine</label>
+                                <jobString>Mining Rough Citrine.</jobString>
+                                <products>
+                                    <RF_RoughCitrine>2</RF_RoughCitrine>
+                                </products>
+                            </RecipeDef>
+
+                            <RecipeDef ParentName="DankPyon_MineShaftBase">
+                                <defName>MOT_RF_MakeOre_RoughPeridot</defName>
+                                <workAmount>1800</workAmount>
+                                <label>Mine rough Peridot</label>
+                                <jobString>Mining Rough Peridot.</jobString>
+                                <products>
+                                    <RF_RoughPeridot>2</RF_RoughPeridot>
+                                </products>
+                            </RecipeDef>
+
+                            <RecipeDef ParentName="DankPyon_MineShaftBase">
+                                <defName>MOT_RF_MakeOre_RoughEmerald</defName>
+                                <workAmount>1800</workAmount>
+                                <label>Mine rough Emerald</label>
+                                <jobString>Mining Rough Emerald.</jobString>
+                                <products>
+                                    <RF_RoughEmerald>2</RF_RoughEmerald>
+                                </products>
+                            </RecipeDef>
+
+                            <RecipeDef ParentName="DankPyon_MineShaftBase">
+                                <defName>MOT_RF_MakeOre_RoughAquamarine</defName>
+                                <workAmount>1800</workAmount>
+                                <label>Mine rough Aquamarine</label>
+                                <jobString>Mining Rough Aquamarine.</jobString>
+                                <products>
+                                    <RF_RoughAquamarine>2</RF_RoughAquamarine>
+                                </products>
+                            </RecipeDef>
+
+                            <RecipeDef ParentName="DankPyon_MineShaftBase">
+                                <defName>MOT_RF_MakeOre_RoughSapphire</defName>
+                                <workAmount>1800</workAmount>
+                                <label>Mine rough Sapphire</label>
+                                <jobString>Mining Rough Sapphire.</jobString>
+                                <products>
+                                    <RF_RoughSapphire>2</RF_RoughSapphire>
+                                </products>
+                            </RecipeDef>
+
+                            <RecipeDef ParentName="DankPyon_MineShaftBase">
+                                <defName>MOT_RF_MakeOre_RoughKunzite</defName>
+                                <workAmount>1800</workAmount>
+                                <label>Mine rough Kunzite</label>
+                                <jobString>Mining Rough Kunzite.</jobString>
+                                <products>
+                                    <RF_RoughKunzite>2</RF_RoughKunzite>
+                                </products>
+                            </RecipeDef>
+
+                            <RecipeDef ParentName="DankPyon_MineShaftBase">
+                                <defName>MOT_RF_MakeOre_RoughOnyx</defName>
+                                <workAmount>1800</workAmount>
+                                <label>Mine rough Onyx</label>
+                                <jobString>Mining Rough Onyx.</jobString>
+                                <products>
+                                    <RF_RoughOnyx>2</RF_RoughOnyx>
+                                </products>
+                            </RecipeDef>
+
+                        </value>
+                    </li>
+                </operations>
+            </match>
+        </match>
+    </Operation>
+</Patch>

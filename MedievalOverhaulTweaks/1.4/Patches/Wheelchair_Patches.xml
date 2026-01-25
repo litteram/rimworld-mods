@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Overhaul</li>
+      <li>Medieval Overhaul (unofficial)</li>
+      </mods>
+    <match Class="PatchOperationFindMod">
+      <mods>
+        <li>Wheelchairs</li>
+        </mods>
+
+      <match Class="PatchOperationSequence">
+        <success>Always</success>
+
+        <operations>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName="Wheelchair"]/costList</xpath>
+            <value>
+              <costList><DankPyon_ComponentBasic>2</DankPyon_ComponentBasic></costList>
+              </value>
+            </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName="Wheelchair"]/recipeMaker/researchPrerequisite</xpath>
+            <value>
+              <researchPrerequisite>Smithing</researchPrerequisite>
+              </value>
+          </li>
+          <li Class="PatchOperationReplace">
+            <xpath>/Defs/ThingDef[defName="Wheelchair"]/recipeMaker/recipeUsers/li</xpath>
+            <value>
+              <li>DankPyon_Anvil</li>
+              </value>
+          </li>
+          </operations>
+        </match>
+      </match>
+    </Operation>
+  </Patch>

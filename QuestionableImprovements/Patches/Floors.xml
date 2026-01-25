@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>zenlor.QuestionableImprovements</modId>
+    <key>basicsFloorCostEnabled</key>
+    <defaultValue>false</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.UseSetting">
+        <modId>zenlor.QuestionableImprovements</modId>
+        <key>basicsFloorCost</key>
+        <defaultValue>1</defaultValue>
+        <apply>
+          <Operation Class="XmlExtensions.PatchOperationAddOrReplace">
+            <xpath>/Defs/TerrainDef[
+            @ParentName="FloorBase"
+            or @ParentName="OutlandFloorBase"
+            or @ParentName="TFloorBaseWood"
+            or @ParentName="TFloorBaseCarpet"
+            or @ParentName="TFloorBaseStone"
+            or @ParentName="NaturalTerrainBase"
+              ]/statBases</xpath>
+            <value>
+              <MarketValue>{basicsFloorCost}</MarketValue>
+            </value>
+          </Operation>
+        </apply>
+      </Operation>
+    </caseTrue>
+  </Operation>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>zenlor.QuestionableImprovements</modId>
+    <key>basicsPackedDirt</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <li Class="XmlExtensions.PatchOperationSafeAdd">
+        <xpath>Defs/TerrainDef[defName="PackedDirt"]</xpath>
+        <value>
+          <designationCategory>Floors</designationCategory>
+          <constructEffect>ConstructDirt</constructEffect>
+          <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+          <description>Manually packed dirt to build roads.</description>
+          <uiOrder>1990</uiOrder>
+          <pollutionOverlayTexturePath>Terrain/Surfaces/PollutionSoil</pollutionOverlayTexturePath>
+          <pollutionColor>(1, 1, 1, 0.43)</pollutionColor>
+          <pollutionOverlayScale>(0.66, 0.66)</pollutionOverlayScale>
+        </value>
+      </li>
+      <li Class="XmlExtensions.PatchOperationSafeAdd">
+        <xpath>Defs/TerrainDef[defName="PackedDirt"]/statBases</xpath>
+        <value>
+          <WorkToBuild>100</WorkToBuild>
+          <MarketValue>0</MarketValue>
+        </value>
+      </li>
+    </caseTrue>
+  </Operation>
+</Patch>

@@ -1,0 +1,12 @@
+PsycasterGenesSpawner/Source/packages
+PsycasterGenesSpawner/Source/PsycasterGeneSpawner/bin
+PsycasterGenesSpawner/Source/PsycasterGeneSpawner/obj
+PsycasterGenesSpawner/Source/obj/
+PsycasterGenesSpawner/Source/bin/
+
+0Harmony.dll
+*.pdb
+
+.idea
+.vs
+/build

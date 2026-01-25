@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="XmlExtensions.FindMod">
+        <mods>
+            <li>Anomaly</li>
+        </mods>
+        <logic>and</logic>
+        <caseTrue> 
+            <Operation Class="XmlExtensions.CreateDocument">
+                <docName>AnomalyResearch</docName>
+                <xpath>Defs/ResearchProjectDef[knowledgeCost]</xpath>
+            </Operation>
+
+              <!-- fix anomaly mods -->
+            <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.anomaly">
+                <xmlDoc>AnomalyResearch</xmlDoc>
+                <xpath>AnomalyResearch/ResearchProjectDef</xpath>
+                <value>
+                    <tab>Anomaly</tab>
+                </value>
+            </Operation>
+
+            <Operation Class="XmlExtensions.MergeDocument">
+                <docName>AnomalyResearch</docName>
+            </Operation>
+        </caseTrue>
+    </Operation>
+
+</Patch>

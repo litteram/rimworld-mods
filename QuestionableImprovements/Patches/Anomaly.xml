@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ThingDef[defName="Shard"]/statBases/MarketValue</xpath>
+    <value>
+      <MarketValue>1</MarketValue>
+    </value>
+  </Operation>
+</Patch>

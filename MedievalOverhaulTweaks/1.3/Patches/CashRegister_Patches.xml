@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Medieval Overhaul</li>
+            <li>Medieval Overhaul (unofficial)</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>Cash Register</li>
+            </mods>
+
+            <match Class="PatchOperationSequence">
+                <operations>
+                    
+                    <li Class="PatchOperationReplace">
+                        <xpath>/Defs/ThingDef[defName="CashRegister_CashRegister"]/costList</xpath>
+                        <value>
+                            <costList>
+                                <DankPyon_ComponentBasic>1</DankPyon_ComponentBasic>
+                            </costList>
+                        </value>
+                    </li>
+                </operations>
+            </match>
+        </match>
+    </Operation>
+</Patch>

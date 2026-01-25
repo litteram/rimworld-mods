@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Medieval Overhaul</li>
+            <li>Medieval Overhaul (unofficial)</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>Medieval Medicines</li>
+            </mods>
+
+            <match Class="PatchOperationSequence">
+                <success>Always</success>
+				
+                <operations>
+                    <!-- Adjust research -->
+                    <li Class="PatchOperationReplace">
+                        <xpath>/Defs/ResearchProjectDef[defName="EarlyMedievalMedicine"]</xpath>
+                        <value>
+                            <ResearchProjectDef>
+                                <defName>EarlyMedievalMedicine</defName>
+                                <label>Early Medieval Medicine</label>
+                                <description>Through the use of techniques like trepanning and bloodletting, we are able to create medicine kits more effective than just herbs.</description>
+                                <baseCost>1500</baseCost>
+                                <techLevel>Medieval</techLevel>
+                                <tags>
+                                    <li>ClassicStart</li>
+                                </tags>
+                                <tab>DankPyon_MedievalResearchTab</tab>
+                                <researchViewX>5.00</researchViewX>
+                                <researchViewY>4.95</researchViewY>
+                            </ResearchProjectDef>
+                        </value>
+                    </li>
+
+                    <li Class="PatchOperationReplace">
+                        <xpath>/Defs/ResearchProjectDef[defName="LateMedievalMedicine"]</xpath>
+                        <value>
+                            <ResearchProjectDef>
+                                <defName>LateMedievalMedicine</defName>
+                                <label>Late Medieval Medicine</label>
+                                <description>The addition of new mixtures, use of alcohol on bandages, and the idea that contagions come from unseeable particles from outside of us allow us to improve upon our medicine for much more effective treatment.</description>
+                                <baseCost>3000</baseCost>
+                                <techLevel>Medieval</techLevel>
+                                <prerequisites>
+                                    <li>EarlyMedievalMedicine</li>
+                                </prerequisites>
+                                <tags>
+                                    <li>ClassicStart</li>
+                                </tags>
+                                <tab>DankPyon_MedievalResearchTab</tab>
+                                <researchViewX>6.00</researchViewX>
+                                <researchViewY>4.95</researchViewY>
+                            </ResearchProjectDef>
+                        </value>
+                    </li>
+
+                    <li Class="PatchOperationReplace">
+                        <xpath>/Defs/ResearchProjectDef[defName="ParesianMedicine"]</xpath>
+                        <value>
+                            <ResearchProjectDef>
+                                <defName>ParesianMedicine</defName>
+                                <label>Paresian Medicine</label>
+                                <description>Our eyes have been opened to the concepts of chemsitry and sterilization. Through the use of advanced mixtures and the sterlization of wounds, bandages, and tools, we are now able to treat wounds incredibly effectively.</description>
+                                <baseCost>5500</baseCost>
+                                <techLevel>Medieval</techLevel>
+                                <prerequisites>
+                                    <li>LateMedievalMedicine</li>
+                                </prerequisites>
+                                <tab>DankPyon_MedievalResearchTab</tab>
+                                <researchViewX>7.00</researchViewX>
+                                <researchViewY>4.95</researchViewY>
+                            </ResearchProjectDef>
+                        </value>
+                    </li>
+
+                    <!-- Remove MedMed tab -->
+                    <li Class="PatchOperationRemove">
+                        <xpath>/Defs/ResearchTabDef[defName="MedMed"]</xpath>
+                    </li>
+                </operations>
+            </match>
+        </match>
+    </Operation>
+</Patch>

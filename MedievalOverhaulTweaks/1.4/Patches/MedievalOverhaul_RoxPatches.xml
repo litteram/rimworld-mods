@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>True</enabled>
+		<mods>
+			<li>Medieval Overhaul</li>
+		</mods>
+		<label>Milkable Migty Roxes</label>
+		<operations>
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/ThingDef[defName="DankPyon_Rox"]/comps</xpath>
+				<value>
+					<li Class="CompProperties_Milkable">
+						<milkDef>Milk</milkDef>
+						<milkIntervalDays>2</milkIntervalDays>
+						<milkAmount>30</milkAmount>
+					</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

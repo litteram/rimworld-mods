@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <XmlExtensions.SettingsMenuDef>
+    <defName>QuestionableImprovements</defName>
+    <modId>zenlor.QuestionableImprovements</modId>
+    <label>Questionable Improvements</label>
+    <settings>
+      <li Class="XmlExtensions.Setting.Text">
+        <text>Important: settings are applied during load. Restart the game when changing settings.</text>
+      </li>
+      <li Class="XmlExtensions.Setting.GapLine"/>
+      <li Class="XmlExtensions.Setting.SetColor">
+        <color>(79,204,62)</color>
+      </li>
+      <li Class="XmlExtensions.Setting.Text">
+        <text>Basics</text>
+        <font>Medium</font>
+        <anchor>Middle</anchor>
+      </li>
+      <li Class="XmlExtensions.Setting.SetColor"/>
+      <li Class="XmlExtensions.Setting.Gap"/>
+      <li Class="XmlExtensions.Setting.Section">
+        <settings>
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>basicsDoorSpeedEnabled</key>
+            <label>Manual Door closing speed</label>
+            <tooltip>Set closing speed for manual doors</tooltip>
+          </li>
+          <li Class="XmlExtensions.Setting.Slider">
+            <key>basicsDoorSpeedAnimalFlap</key>
+            <label>animal flap: {basicsDoorSpeedAnimalFlap}</label>
+            <defaultValue>2</defaultValue>
+            <min>0.5</min>
+            <max>3.0</max>
+            <decimals>1</decimals>
+          </li>
+          <li Class="XmlExtensions.Setting.Gap"/>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>basicsMetalsDontBurn</key>
+            <label>Metals are not flammable</label>
+            <defaultValue>true</defaultValue>
+            <tooltip>I tried very hard to burn a piece of steel, I could not.</tooltip>
+          </li>
+          <li Class="XmlExtensions.Setting.Gap"/>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>basicsFloorCostEnabled</key>
+            <label>adjust floor cost</label>
+            <tooltip>NOTE: this will forcibly overwrite any floor market value</tooltip>
+            <defaultValue>false</defaultValue>
+          </li>
+          <li Class="XmlExtensions.Setting.Slider">
+            <key>basicsFloorCost</key>
+            <label>fixed floor cost: {basicsFloorCost}$</label>
+            <defaultValue>1</defaultValue>
+            <min>0</min>
+            <max>10</max>
+            <decimals>1</decimals>
+          </li>
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>basicsPackedDirt</key>
+            <label>Buildable packed dirt</label>
+            <defaultValue>false</defaultValue>
+          </li>
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>basicsScavengeComponents</key>
+            <label>scavenge components at the machining table</label>
+            <defaultValue>true</defaultValue>
+          </li>
+        </settings>
+      </li>
+      <li Class="XmlExtensions.Setting.GapLine"/>
+      <li Class="XmlExtensions.Setting.SetColor">
+        <color>(79,204,62)</color>
+      </li>
+      <li Class="XmlExtensions.Setting.Text">
+        <text>Ideology</text>
+        <font>Medium</font>
+        <anchor>Middle</anchor>
+      </li>
+      <li Class="XmlExtensions.Setting.SetColor"/>
+      <li Class="XmlExtensions.Setting.Gap"/>
+      <li Class="XmlExtensions.Setting.Section">
+        <settings>
+          <li Class="XmlExtensions.Setting.Text">
+            <text>Role ability cooldown</text>
+          </li>
+          <li Class="XmlExtensions.Setting.Text">
+            <text>Leader: {ideologyAbilityCooldownLeader} (default: 1)</text>
+            <tooltip>Ideoligion Leader Cooldown multiplier. Eg: 0.5 will set the cooldown to half of the default value.</tooltip>
+            <keys><li>ideologyAbilityCooldownLeader</li></keys>
+          </li>
+          <li Class="XmlExtensions.Setting.Slider">
+            <key>ideologyAbilityCooldownLeader</key>
+            <defaultValue>1</defaultValue>
+            <min>0.1</min>
+            <max>2</max>
+            <decimals>1</decimals>
+          </li>
+          <li Class="XmlExtensions.Setting.Text">
+            <text>Moral guide: {ideologyAbilityCooldownMoralist} (default: 1)</text>
+            <tooltip>Ideoligion Moral Guide Cooldown multiplier. Eg: 0.5 will set the cooldown to half of the default value.</tooltip>
+            <keys><li>ideologyAbilityCooldownMoralist</li></keys>
+          </li>
+          <li Class="XmlExtensions.Setting.Slider">
+            <key>ideologyAbilityCooldownMoralist</key>
+            <defaultValue>1</defaultValue>
+            <min>0.1</min>
+            <max>2</max>
+            <decimals>1</decimals>
+          </li>
+          <li Class="XmlExtensions.Setting.Text">
+            <text>Secondary roles: {ideologyAbilityCooldownMultiRole} (default: 1)</text>
+            <tooltip>Ideoligion generic roles (eg: Production Specialist) Cooldown multiplier. Eg: 0.5 will set the cooldown to half of the default value.</tooltip>
+            <keys><li>ideologyAbilityCooldownMultiRole</li></keys>
+          </li>
+          <li Class="XmlExtensions.Setting.Slider">
+            <key>ideologyAbilityCooldownMultiRole</key>
+            <defaultValue>1</defaultValue>
+            <min>0.1</min>
+            <max>2</max>
+            <decimals>1</decimals>
+          </li>
+          <li Class="XmlExtensions.Setting.GapLine"/>
+          <li Class="XmlExtensions.Setting.Text">
+            <text>Ritual conversion power</text>
+          </li>
+          <li Class="XmlExtensions.Setting.Slider">
+            <label>Conversion power multiplier: {ideologyConversionPower}</label>
+            <key>ideologyConversionPower</key>
+            <defaultValue>1</defaultValue>
+            <min>0.1</min>
+            <max>4</max>
+            <decimals>1</decimals>
+          </li>
+          <li Class="XmlExtensions.Setting.Slider">
+            <key>ideologyReassurePower</key>
+            <label>Reassure power multiplier: 0.2 * {ideologyReassurePower}</label>
+            <defaultValue>1</defaultValue>
+            <min>0.1</min>
+            <max>3</max>
+            <decimals>1</decimals>
+          </li>
+          <li Class="XmlExtensions.Setting.Slider">
+            <key>ideologyExpectationsOffset</key>
+            <label>Expectation increase for Ideology roles: {ideologyExpectationsOffset} (default: 2)</label>
+            <defaultValue>2</defaultValue>
+            <min>0</min>
+            <max>3</max>
+            <decimals>0</decimals>
+          </li>
+          <li Class="XmlExtensions.Setting.GapLine"/>
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>roleWorkEnable</key>
+            <label>Enable Ideology roles to work on any job</label>
+            <defaultValue>false</defaultValue>
+          </li>
+        </settings>
+      </li>
+      <li Class="XmlExtensions.Setting.GapLine"/>
+      <li Class="XmlExtensions.Setting.SetColor">
+        <color>(79,204,62)</color>
+      </li>
+      <li Class="XmlExtensions.Setting.Text">
+        <text>Royalty</text>
+        <font>Medium</font>
+        <anchor>Middle</anchor>
+      </li>
+      <li Class="XmlExtensions.Setting.SetColor"/>
+      <li Class="XmlExtensions.Setting.Gap"/>
+      <li Class="XmlExtensions.Setting.Section">
+        <settings>
+
+          <li Class="XmlExtensions.Setting.Checkbox">
+            <key>royaltyBuyablePsylink</key>
+            <label>Buyable Psylink</label>
+            <defaultValue>true</defaultValue>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Slider">
+            <key>royaltyPermitsCooldownMulti</key>
+            <label>Adjust Royal permits cooldown (multiplier): {royaltyPermitsCooldownMulti} (default: 1)</label>
+            <defaultValue>1</defaultValue>
+            <min>0</min>
+            <max>3</max>
+            <decimals>1</decimals>
+          </li>
+
+          <li Class="XmlExtensions.Setting.Slider">
+            <key>royaltyTitlePointsMulti</key>
+            <label>Adjust points awarded by Royal titles (multiplier): {royaltyTitlePointsMulti} (default: 1)</label>
+            <defaultValue>1</defaultValue>
+            <min>0</min>
+            <max>10</max>
+            <decimals>0</decimals>
+          </li>
+
+        </settings>
+      </li>
+    </settings>
+  </XmlExtensions.SettingsMenuDef>
+</Defs>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Medieval Overhaul</li>
+            <li>Medieval Overhaul (unofficial)</li>
+        </mods>
+        <match Class="PatchOperationFindMod">
+            <mods>
+                <li>Medieval Prosthetics</li>
+            </mods>
+            <match Class="PatchOperationSequence">
+                <success>Always</success>
+
+                <operations>
+                    <li Class="PatchOperationReplace">
+                        <xpath>/Defs/ResearchProjectDef[defName="CrudeLimbs"]</xpath>
+                        <value>
+                            <ResearchProjectDef>
+                                <defName>CrudeLimbs</defName>
+                                <label>Crude Limbs</label>
+                                <description>Basic, uncomfortable, and ineffective, but better than nothing. Can now craft shoddy limb replacements at a Crafting Spot.</description>
+                                <baseCost>1500</baseCost>
+                                <techLevel>Neolithic</techLevel>
+                                <tags>
+                                    <li>ClassicStart</li>
+                                </tags>
+                                <tab>DankPyon_MedievalResearchTab</tab>
+                                <researchViewX>1.00</researchViewX>
+                                <researchViewY>4.95</researchViewY>
+                            </ResearchProjectDef>
+                        </value>
+                    </li>
+
+                    <li Class="PatchOperationReplace">
+                        <xpath>/Defs/ResearchProjectDef[defName="ArtificialLimbs"]</xpath>
+                        <value>
+                            <ResearchProjectDef>
+                                <defName>ArtificialLimbs</defName>
+                                <label>Artificial Limbs</label>
+                                <description>Still quite unrefined, but better than the shoddy limbs that came before. Artificial limbs can now be crafted at a Crafting Spot.</description>
+                                <baseCost>2500</baseCost>
+                                <techLevel>Neolithic</techLevel>
+                                <prerequisites>
+                                    <li>CrudeLimbs</li>
+                                </prerequisites>
+                                <tags>
+                                    <li>ClassicStart</li>
+                                </tags>
+                                <tab>DankPyon_MedievalResearchTab</tab>
+                                <researchViewX>2.00</researchViewX>
+                                <researchViewY>4.95</researchViewY>
+                            </ResearchProjectDef>
+                        </value>
+                    </li>
+
+                    <li Class="PatchOperationReplace">
+                        <xpath>/Defs/ResearchProjectDef[defName="MechanicalLimbs"]</xpath>
+                        <value>
+                            <ResearchProjectDef>
+                                <defName>MechanicalLimbs</defName>
+                                <label>Mechanical Limbs</label>
+                                <description>Intricately crafted limbs with many pulleys and gears. While these are a great improvement, the mechanics of the human body are tough to reproduce. Mechanical limbs can be crafted at a Fueled Smithy.</description>
+                                <baseCost>4000</baseCost>
+                                <techLevel>Medieval</techLevel>
+                                <prerequisites>
+                                    <li>Smithing</li>
+                                    <li>ArtificialLimbs</li>
+                                </prerequisites>
+                                <tags>
+                                    <li>ClassicStart</li>
+                                </tags>
+                                <tab>DankPyon_MedievalResearchTab</tab>
+                                <researchViewX>3.00</researchViewX>
+                                <researchViewY>4.95</researchViewY>
+                            </ResearchProjectDef>
+                        </value>
+                    </li>
+
+                    <li Class="PatchOperationReplace">
+                        <xpath>/Defs/ResearchProjectDef[defName="AmbroisenLimbs"]</xpath>
+                        <value>
+                            <ResearchProjectDef>
+                                <defName>AmbroisenLimbs</defName>
+                                <label>Ambroisen Limbs</label>
+                                <description>Incredible engineering and craftmanship utilized in tangent have allowed for elegant limbs that are on par with natural limbs. Quite time and resource expensive. Ambroisen limbs can be crafted at a Fueled Smithy.</description>
+                                <baseCost>5500</baseCost>
+                                <techLevel>Medieval</techLevel>
+                                <prerequisites>
+                                    <li>Smithing</li>
+                                    <li>MechanicalLimbs</li>
+                                </prerequisites>
+                                <tags>
+                                    <li>ClassicStart</li>
+                                </tags>
+                                <tab>DankPyon_MedievalResearchTab</tab>
+                                <researchViewX>4.00</researchViewX>
+                                <researchViewY>4.95</researchViewY>
+                            </ResearchProjectDef>
+                        </value>
+                    </li>
+
+                    <!-- Remove MedMed tab -->
+                    <li Class="PatchOperationRemove">
+                        <xpath>/Defs/ResearchTabDef[defName="MedPros"]</xpath>
+                    </li>
+                </operations>
+            </match>
+        </match>
+    </Operation>
+</Patch>

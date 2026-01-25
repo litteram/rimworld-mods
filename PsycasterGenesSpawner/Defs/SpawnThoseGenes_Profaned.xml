@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SpawnThoseGenes.SpawnThoseGenesXenotypes MayRequire="">
+    <defName>BotchJob_ProfanedXenotype</defName>
+    <Groups>
+      <!-- half of the population is cut off from magic -->
+      <li>
+        <Endogenes>
+          <PsychicAbility_Deaf>0.5</PsychicAbility_Deaf>
+          <PsychicAbility_Dull>0.3</PsychicAbility_Dull>
+          <PsychicAbility_Enhanced>0.10</PsychicAbility_Enhanced>
+          <PsychicAbility_Extreme>0.05</PsychicAbility_Extreme>
+        </Endogenes>
+      </li>
+      <!-- common mutations -->
+      <li>
+        <Endogenes>
+          <Gene_Nightstalker>0.3</Gene_Nightstalker>
+          <Gene_Frostshaper>0.3</Gene_Frostshaper>
+          <Gene_Conflagrator>0.3</Gene_Conflagrator>
+          <Gene_Staticlord>0.3</Gene_Staticlord>
+        </Endogenes>
+      </li>
+      <!-- Rare mutations -->
+      <li>
+        <Endogenes>
+          <Gene_Necropath>0.125</Gene_Necropath>
+          <Gene_Protector>0.125</Gene_Protector>
+          <Gene_Warlord>0.125</Gene_Warlord>
+        </Endogenes>
+      </li>
+      <!-- Very Rare mutations -->
+      <li>
+        <Endogenes>
+          <Gene_Chronopath>0.08</Gene_Chronopath>
+          <Gene_Skipmaster>0.08</Gene_Skipmaster>
+        </Endogenes>
+      </li>
+    </Groups>
+  </SpawnThoseGenes.SpawnThoseGenesXenotypes>
+  <SpawnThoseGenes.SpawnThoseGenesXenotypes>
+    <defName>BotchJob_ProfanedCursebearerXenotype</defName>
+    <Groups>
+      <!-- 25% of the population has heightened magic abilities -->
+      <li>
+        <Endogenes>
+          <PsychicAbility_Enhanced>0.20</PsychicAbility_Enhanced>
+          <PsychicAbility_Extreme>0.05</PsychicAbility_Extreme>
+        </Endogenes>
+      </li>
+      <!-- guaranteed mutations -->
+      <li>
+        <Endogenes>
+          <Gene_Necropath>1</Gene_Necropath>
+        </Endogenes>
+      </li>
+      <!-- elemental mutations -->
+      <li>
+        <Endogenes>
+          <Gene_Frostshaper>0.6</Gene_Frostshaper>
+          <Gene_Conflagrator>0.6</Gene_Conflagrator>
+          <Gene_Staticlord>0.6</Gene_Staticlord>
+        </Endogenes>
+      </li>
+      <!-- Rare mutations -->
+      <li>
+        <Endogenes>
+          <Gene_Archon>0.1</Gene_Archon>
+          <Gene_Archotechist>0.15</Gene_Archotechist>
+          <Gene_Protector>0.2</Gene_Protector>
+          <Gene_Warlord>0.2</Gene_Warlord>
+        </Endogenes>
+      </li>
+      <!-- Very Rare mutations -->
+      <li>
+        <Endogenes>
+          <Gene_Chronopath>0.15</Gene_Chronopath>
+          <Gene_Skipmaster>0.15</Gene_Skipmaster>
+        </Endogenes>
+      </li>
+    </Groups>
+  </SpawnThoseGenes.SpawnThoseGenesXenotypes>
+</Defs>

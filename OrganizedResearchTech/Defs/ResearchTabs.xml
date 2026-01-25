@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <ResearchTabDef>
+    <defName>SRT_MedievalResearch</defName>
+    <label>Medieval</label>
+  </ResearchTabDef>
+  <ResearchTabDef>
+    <defName>SRT_IndustrialResearch</defName>
+    <label>Industrial</label>
+  </ResearchTabDef>
+  <ResearchTabDef>
+    <defName>SRT_IndustrialResearchI</defName>
+    <label>Hi-Tech</label>
+  </ResearchTabDef>
+  <ResearchTabDef>
+    <defName>SRT_IndustrialResearchII</defName>
+    <label>Silicon</label>
+  </ResearchTabDef>
+  <ResearchTabDef>
+    <defName>SRT_SpacerResearch</defName>
+    <label>Spacer</label>
+  </ResearchTabDef>
+  <ResearchTabDef>
+    <defName>SRT_UltraResearch</defName>
+    <label>Ultra</label>
+  </ResearchTabDef>
+  <ResearchTabDef>
+    <defName>SRT_ArchotechResearch</defName>
+    <label>Archotech</label>
+  </ResearchTabDef>
+</Defs>

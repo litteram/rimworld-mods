@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <GeneDef ParentName="GenePsycastBase" MayRequire="VanillaExpanded.VPE.Puppeteer">
+    <defName>Gene_Puppeteer</defName>
+    <label>Puppeteer</label>
+    <labelShortAdj>Puppeteer</labelShortAdj>
+    <description>Carriers of this gene can learn Puppeteer psycasting path.</description>
+    <iconPath>Gene_Puppeteer</iconPath>
+    <displayOrderInCategory>522</displayOrderInCategory>
+    <marketValueFactor>4</marketValueFactor>
+  </GeneDef>
+</Defs>

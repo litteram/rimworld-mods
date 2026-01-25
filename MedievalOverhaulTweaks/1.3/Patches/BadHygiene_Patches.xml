@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Dubs Bad Hygiene</li>
+        </mods>
+
+        <match Class="PatchOperationSequence">
+            <success>Always</success>
+            <operations>
+
+                <li Class="MOTweaks.PatchOperationSettingActive">
+                    <settings>
+                        <li>hygieneIrrigation</li>
+                    </settings>
+                    <active Class="PatchOperationReplace">
+                        <xpath>Defs/ResearchProjectDef[defName="Irrigation"]/techLevel</xpath>
+                        <value>
+                            <techLevel>Medieval</techLevel>
+                        </value>
+                    </active>
+                </li>
+
+                <li Class="MOTweaks.PatchOperationSettingActive">
+                    <settings>
+                        <li>hygieneHeating</li>
+                    </settings>
+                    <active Class="PatchOperationReplace">
+                        <xpath>Defs/ResearchProjectDef[defName="CentralHeating"]/techLevel</xpath>
+                        <value>
+                            <techLevel>Medieval</techLevel>
+                        </value>
+                    </active>
+                </li>
+
+                <li Class="PatchOperationFindMod">
+                    <mods>
+                        <li>Medieval Overhaul</li>
+                        <li>Medieval Overhaul (unofficial)</li>
+                    </mods>
+
+                    <match Class="PatchOperationReplace">
+                        <xpath>/Defs/ThingDef[defName="IrrigationSprinkler"]/costList</xpath>
+                        <value>
+                            <costList>
+                                <DankPyon_IronIngot>30</DankPyon_IronIngot>
+                                <DankPyon_ComponentBasic>1</DankPyon_ComponentBasic>
+                            </costList>
+                        </value>
+                    </match>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

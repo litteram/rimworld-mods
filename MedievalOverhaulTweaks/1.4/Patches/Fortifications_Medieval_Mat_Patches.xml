@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="VFECore.PatchOperationToggableSequence">
+        <enabled>True</enabled>
+        <mods>
+            <li>Medieval Overhaul</li>
+            <li>Fortifications - Medieval - Material</li>
+        </mods>
+        <label>Fortifications - Medieval - Material &amp; Medieval Overhaul recipe:</label>
+
+        <operations>
+            <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[defName="FT_TableMasonry"]/costList</xpath>
+                <value>
+                    <costList>
+                        <DankPyon_IronIngot>20</DankPyon_IronIngot>
+                        <WoodLog>50</WoodLog>
+                    </costList>
+                </value>
+            </li>
+        </operations>
+
+    </Operation>
+</Patch>

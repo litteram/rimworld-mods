@@ -1,0 +1,94 @@
+[h2]Small tweaks to Medieval Overhaul and related mods[/h2]
+
+[url=https://github.com/litteram/rimworld-mods]Released under MIT license[/url]
+
+A set of opinionated patches powered by [url=https://steamcommunity.com/workshop/filedetails/?id=2023507013]Vanilla Expanded Framework[/url] tailored for a medieval playthrough.
+
+The patch set should not send error messages, if there are errors or incompatibilities write in the comments or [b]open a [url=https://github.com/litteram/rimworld-mods/issues]Github Issue[/url][/b]
+
+
+[h2]Options[/h2]
+
+The newer version of this mod uses [url=https://steamcommunity.com/workshop/filedetails/?id=2023507013]Vanilla Expanded Framework[/url] [url=https://github.com/Vanilla-Expanded/VanillaExpandedFramework/wiki/Toggable-patches]Togglable Patches[/url]. Toggles for the patches can be found in the [b]Vanilla Framework Expanded[/b] mod menu, under [b]Toggable Patches[/b].
+
+[h2]List of changes[/h2]
+
+Note this is a list of all historical patches. For a list of active patches check VFE mod menu.
+
+[h3]Fixes[/h3]
+
+[list]
+[*] Workbench's recipe bills, it's possible to craft anything craftable in the crafting spot
+[*] Tailor Bench's recipe bills to accept anything craftable in a Hand Tailor Bench
+[*] Cooking Table's recipe bills to accept anything made for Electric Stove
+[/list]
+
+
+[h3]General Changes[/h3]
+
+[list]
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=836308268]Dubs Bad Hygiene[/url] Irrigation is moved to medieval. Irrigation is a cornerstone of the medieval ages [i](*)[/i]
+[*] Early [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2109206579]Medieval Medicine[/url] is cheaper to research and it's moved to neolithic tech (in the end it's just a set of bandages and medical herbs) [i](*)[/i]
+[*] Early [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2101545242]Medieval Prosthetics[/url] is cheaper to research, this is still tied to the medieval era.
+[*] Anvil can be used as smithy. Its finally possible to craft Crowns using medieval tools.
+[/list]
+
+[h3]Integration and patches[/h3]
+
+[list]
+[*] Rimworld Royalty [i]Piano[/i] tech moved to Medieval, only the Stellarch and his small court can appreciate the sounds of this device, only few in the world can build and accord such a contraption.
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3079786283]VFE: Tribals[/url] research prerequisites integrations.
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=1103809207]More Linkables[/url] buildings can [i]link[/i] to [i]rustic[/i] medieval benches.
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2271578989]Simple Landfill[/url] Soil Laying tech moved to Medieval, Moat tech moved to neolithic.
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2451324814][noparse][SYR][/noparse] Trait Value[/url] integration for [i]Fighter[/i] and [i]Veteran[/i] traits
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2501487160]Fortifications - Medieval - Material[/url] replace steel ingots with iron.
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2506046833]Cash Register[/url] replace industrial components.
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2553700067]Medieval Overhaul[/url] Gemstones are mineable using a MineShaft. Finding and polishing stones is a lengthy process.
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2571189146]Windows[/url] replace Steel ingots with Iron ingots, replace Plasteel with Steel ingots.
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2630669656]RimFantasy Gemstones[/url] can be mined using a mineshaft with enought time
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2787850474]Vanilla Faction Expanded: Classical[/url] uses Bronze instead of Steel for most buildings. Bronze requires smelting Iron Ore (for a way to do it in the neolithic age try [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2327252470]Primitive Workbenches[/url]). This patch can be toggled.
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=735241897]MendAndRecycle[/url] re-implement [url=https://steamcommunity.com/sharedfiles/filedetails/?id=]Mending Medieval[/url].
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=836308268]Dubs Bad Hygiene[/url] Heating moved to Medieval. [i]Disabled by default[/i].
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=836308268]Dubs Bad Hygiene[/url] Sprinklers use Basic Components
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2896217209]Adobe Abode[/url] recipe patches.
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2079862064]Simple Recycling[/url] research patch.
+[/list]
+
+[h3]VFE Tribal integrations:[/h3]
+
+[list]
+[*] Neolithic Storage locked under [i]Furniture[/i].
+[*] Hay Rack locked under [i]Agriculture[/i]
+[*] Dry Rack locked under [i]Hunting[/i]
+[*] Butcher's Block requires [i]Hunting[/i] and [i]Construction[/i] (butcher's spot is available after Hunting)
+[*] Butcher's Table locked under [i]Rustic Furniture[/i]
+[*] Mining Spot locked under [i]Mining[/i]
+[*] Stonecutting Spot locked under [i]Mining[/i] and [i]Construction[/i]
+[*] rustic and slab door, log walls and palisades, log and metal gates are locked under [i]Construction[/i]
+[*] hide and cloth tent walls are locked under [i]Hunting[/i]
+[*] log table and chairs are locked under [i]Furniture[/i]
+[*] industrial (vanilla) tables and chairs are locked under [i]Complex Furniture[/i]
+[*] research spot, rustic cooking tables, cleaning bench and workbench are all locked under [i]Culture[/i]
+[*] the Large Fire requires logs, not timber!
+[*] [strike]the Wild Men scenario doesn't provide timber but wood logs[/strike]
+[/list]
+
+[h3]Biotech Integrations via SpawnThoseGenes![/h3]
+These patches require: [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2898044088]\[BT\] SpawnThoseGenes![/url]. Check my [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2855794773]collection[/url] for an almost lightweight fantasy themed medieval psycast expanded playthrought invented by the ingenious madness of a certain streamer. 
+[list]
+[*] [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3110971925]Vanilla Psycast Expanded - Biotech Integrations[/url] [i]integrations[/i]. Spawn psycaster genes in Baseliners, weighted random (values are beta)
+[*] Psycast genes integrations for [url=]The Profaned[/url] faction (values are beta).
+[*] Add VPE psycasting abilities to [url=]The Profaned[/url] raider pawns (values are beta).
+[*] Spawn genes for body sizes, random
+[*] Spawn genes for skin colors, weighted random (values are beta)
+[*] Spawn genes for ears, weighted random (values are beta) 
+[/list]
+
+[hr][/hr]
+
+[i](*)[/i] Standalone patches. Patches marked don't require Medieval Overhaul. These might be useful for light-medieval or era-like playthrough (eg. using TechBlock or Tech Advancing).
+
+
+[quote] [b]Note[/b]
+Souces are over github in the litteram/rimworld-mods repository.
+[/quote]

@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="XmlExtensions.FindMod">
+    <mods>
+      <li>Vanilla Psycast Expanded - Biotech Integration</li>
+      <li>[BT] SpawnThoseGenes!</li>
+    </mods>
+    <caseTrue>
+      <li Class="XmlExtensions.OptionalPatch">
+        <modId>zenlor.MOTweaks</modId>
+        <key>stg-vpe-psygenes</key>
+        <defaultValue>True</defaultValue>
+        <caseTrue>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[defName="Baseliner"]/Groups</xpath>
+            <value>
+              <!-- Common 1.0 x2 -->
+              <li>
+                <Endogenes>
+                  <Gene_Frostshaper>0.2</Gene_Frostshaper>
+                  <Gene_Conflagrator>0.2</Gene_Conflagrator>
+                  <Gene_Staticlord>0.2</Gene_Staticlord>
+                  <Gene_Technomancer>0.2</Gene_Technomancer>
+                  <Gene_Wildspeaker>0.2</Gene_Wildspeaker>
+                </Endogenes>
+              </li>
+              <li>
+                <Endogenes>
+                  <Gene_Frostshaper>0.2</Gene_Frostshaper>
+                  <Gene_Conflagrator>0.2</Gene_Conflagrator>
+                  <Gene_Staticlord>0.2</Gene_Staticlord>
+                  <Gene_Technomancer>0.2</Gene_Technomancer>
+                  <Gene_Wildspeaker>0.2</Gene_Wildspeaker>
+                </Endogenes>
+              </li>
+              <!-- Uncommon 0.5 x2 -->
+              <li>
+                <Endogenes>
+                  <Gene_Skipmaster>0.1</Gene_Skipmaster>
+                  <Gene_Archon>0.1</Gene_Archon>
+                  <Gene_Archotechist>0.1</Gene_Archotechist>
+                  <Gene_Necropath>0.1</Gene_Necropath>
+                  <Gene_Protector>0.1</Gene_Protector>
+                </Endogenes>
+              </li>
+              <li>
+                <Endogenes>
+                  <Gene_Skipmaster>0.15</Gene_Skipmaster>
+                  <Gene_Necropath>0.15</Gene_Necropath>
+                  <Gene_Archon>0.1</Gene_Archon>
+                  <Gene_Archotechist>0.1</Gene_Archotechist>
+                  <Gene_Protector>0.1</Gene_Protector>
+                </Endogenes>
+              </li>
+              <!-- Rare 0.3 x1 -->
+              <li>
+                <Endogenes>
+                  <Gene_Protector>0.1</Gene_Protector>
+                  <Gene_Warlord>0.1</Gene_Warlord>
+                  <Gene_Nightstalker>0.1</Gene_Nightstalker>
+                </Endogenes>
+              </li>
+              <!-- Extremely Rare 0.099 x1 -->
+              <li>
+                <Endogenes>
+                  <Gene_Empath>0.033</Gene_Empath>
+                  <Gene_Puppeteer>0.033</Gene_Puppeteer>
+                  <Gene_Chronopath>0.033</Gene_Chronopath>
+                </Endogenes>
+              </li>
+            </value>
+          </li>
+        </caseTrue>
+      </li>
+      <li Class="XmlExtensions.OptionalPatch">
+        <modId>zenlor.MOTweaks</modId>
+        <key>stg-psyaptitude</key>
+        <defaultValue>True</defaultValue>
+        <caseTrue>
+          <li Class="PatchOperationAdd">
+            <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[defName="Baseliner"]/Groups</xpath>
+            <success>Always</success>
+            <value>
+              <li>
+                <Endogenes>
+                  <PsychicAbility_Deaf>0.25</PsychicAbility_Deaf>
+                  <PsychicAbility_Dull>0.2</PsychicAbility_Dull>
+                  <PsychicAbility_Enhanced>0.02</PsychicAbility_Enhanced>
+                  <PsychicAbility_Extreme>0.01</PsychicAbility_Extreme>
+                </Endogenes>
+              </li>
+            </value>
+          </li>
+        </caseTrue>
+      </li>
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[defName="Baseliner"]/Groups</xpath>
+        <success>Always</success>
+        <value>
+          <!-- default genes -->
+          <li>
+            <Endogenes>
+              <Gene_Archon>0</Gene_Archon>
+              <Gene_Archotechist>0</Gene_Archotechist>
+              <Gene_Chronopath>0</Gene_Chronopath>
+              <Gene_Conflagrator>0</Gene_Conflagrator>
+              <Gene_Empath>0</Gene_Empath>
+              <Gene_Frostshaper>0</Gene_Frostshaper>
+              <Gene_Harmonist>0</Gene_Harmonist>
+              <Gene_Necropath>0</Gene_Necropath>
+              <Gene_Nightstalker>0</Gene_Nightstalker>
+              <Gene_Protector>0</Gene_Protector>
+              <Gene_Skipmaster>0</Gene_Skipmaster>
+              <Gene_Staticlord>0</Gene_Staticlord>
+              <Gene_Warlord>0</Gene_Warlord>
+              <Gene_Wildspeaker>0</Gene_Wildspeaker>
+              <Gene_Hemosage>0</Gene_Hemosage>
+              <Gene_Puppeteer>0</Gene_Puppeteer>
+              <!-- Used only as replacement for gene `PsychicAbility_Deaf` -->
+              <!-- <IncreasedMetabolism>0.2</IncreasedMetabolism> -->
+            </Endogenes>
+          </li>
+        </value>
+      </li>
+    </caseTrue>
+  </Operation>
+  <Operation Class="XmlExtensions.FindMod">
+    <mods>
+      <li>[BT] SpawnThoseGenes!</li>
+    </mods>
+    <caseTrue>
+      <li Class="XmlExtensions.OptionalPatch">
+        <modId>zenlor.MOTweaks</modId>
+        <key>stg-bodytypes</key>
+        <defaultValue>True</defaultValue>
+        <caseTrue>
+          <Operation Class="PatchOperationAdd">
+            <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[defName="Baseliner"]/Groups</xpath>
+            <value>
+              <li>
+                <Endogenes>
+                  <Body_Fat>0.25</Body_Fat>
+                  <Body_Thin>0.25</Body_Thin>
+                  <Body_Hulk>0.25</Body_Hulk>
+                  <Body_Standard>0.25</Body_Standard>
+                </Endogenes>
+              </li>
+            </value>
+          </Operation>
+        </caseTrue>
+      </li>
+      <li Class="XmlExtensions.OptionalPatch">
+        <modId>zenlor.MOTweaks</modId>
+        <key>stg-ears</key>
+        <defaultValue>True</defaultValue>
+        <caseTrue>
+          <Operation Class="PatchOperationAdd">
+            <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[defName="Baseliner"]/Groups</xpath>
+            <value>
+              <li>
+                <Endogenes>
+                  <Ears_Cat>0.05</Ears_Cat>
+                  <Ears_Floppy>0.05</Ears_Floppy>
+                  <Ears_Human>0.90</Ears_Human>
+                </Endogenes>
+              </li>
+            </value>
+          </Operation>
+        </caseTrue>
+      </li>
+      <li Class="XmlExtensions.OptionalPatch">
+        <modId>zenlor.MOTweaks</modId>
+        <key>stg-skincolor</key>
+        <defaultValue>True</defaultValue>
+        <caseTrue>
+          <Operation Class="PatchOperationAdd">
+            <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[defName="Baseliner"]/Groups</xpath>
+            <value>
+              <li>
+                <Endogenes>
+                  <Skin_InkBlack>0.008</Skin_InkBlack>
+                  <Skin_Blue>0.008</Skin_Blue>
+                  <Skin_DeepRed>0.008</Skin_DeepRed>
+                  <Skin_DeepYellow>0.008</Skin_DeepYellow>
+                  <Skin_Green>0.008</Skin_Green>
+                  <Skin_InkBlack>0.008</Skin_InkBlack>
+                  <Skin_LightGray>0.008</Skin_LightGray>
+                  <Skin_Orange>0.008</Skin_Orange>
+                  <Skin_PaleRed>0.008</Skin_PaleRed>
+                  <Skin_Purple>0.008</Skin_Purple>
+                  <Skin_SheerWhite>0.008</Skin_SheerWhite>
+                  <Skin_SlateGray>0.008</Skin_SlateGray>
+                  <Skin_Melanin1>0.1</Skin_Melanin1>
+                  <Skin_Melanin2>0.1</Skin_Melanin2>
+                  <Skin_Melanin3>0.1</Skin_Melanin3>
+                  <Skin_Melanin4>0.1</Skin_Melanin4>
+                  <Skin_Melanin5>0.1</Skin_Melanin5>
+                  <Skin_Melanin6>0.1</Skin_Melanin6>
+                  <Skin_Melanin7>0.1</Skin_Melanin7>
+                  <Skin_Melanin8>0.1</Skin_Melanin8>
+                  <Skin_Melanin9>0.1</Skin_Melanin9>
+                </Endogenes>
+              </li>
+            </value>
+          </Operation>
+        </caseTrue>
+      </li>
+    </caseTrue>
+  </Operation>
+  <Operation Class="XmlExtensions.FindMod">
+    <mods>
+      <li>[BT] SpawnThoseGenes!</li>
+      <li>Vanilla Psycast Expanded - Biotech Integration</li>
+      <li>The Profaned</li>
+    </mods>
+    <caseTrue>
+      <li Class="XmlExtensions.OptionalPatch">
+        <modId>zenlor.MOTweaks</modId>
+        <key>stg-profaned</key>
+        <defaultValue>True</defaultValue>
+        <caseTrue>
+          <Operation Class="PatchOperationAdd">
+            <xpath>/Defs</xpath>
+            <value>
+              <SpawnThoseGenes.SpawnThoseGenesXenotypes>
+                <defName>BotchJob_ProfanedXenotype</defName>
+                <Groups>
+                  <!-- half of the population is cut off from magic -->
+                  <li>
+                    <Endogenes>
+                      <PsychicAbility_Deaf>0.5</PsychicAbility_Deaf>
+                      <PsychicAbility_Dull>0.3</PsychicAbility_Dull>
+                      <PsychicAbility_Enhanced>0.10</PsychicAbility_Enhanced>
+                      <PsychicAbility_Extreme>0.05</PsychicAbility_Extreme>
+                    </Endogenes>
+                  </li>
+                  <!-- common mutations -->
+                  <li>
+                    <Endogenes>
+                      <Gene_Nightstalker>0.3</Gene_Nightstalker>
+                      <Gene_Frostshaper>0.3</Gene_Frostshaper>
+                      <Gene_Conflagrator>0.3</Gene_Conflagrator>
+                      <Gene_Staticlord>0.3</Gene_Staticlord>
+                    </Endogenes>
+                  </li>
+                  <!-- Rare mutations -->
+                  <li>
+                    <Endogenes>
+                      <Gene_Necropath>0.125</Gene_Necropath>
+                      <Gene_Protector>0.125</Gene_Protector>
+                      <Gene_Warlord>0.125</Gene_Warlord>
+                    </Endogenes>
+                  </li>
+                  <!-- Very Rare mutations -->
+                  <li>
+                    <Endogenes>
+                      <Gene_Chronopath>0.08</Gene_Chronopath>
+                      <Gene_Skipmaster>0.08</Gene_Skipmaster>
+                    </Endogenes>
+                  </li>
+                </Groups>
+              </SpawnThoseGenes.SpawnThoseGenesXenotypes>
+            </value>
+          </Operation>
+          <Operation Class="PatchOperationAdd">
+            <xpath>/Defs</xpath>
+            <value>
+              <SpawnThoseGenes.SpawnThoseGenesXenotypes>
+                <defName>BotchJob_ProfanedCursebearerXenotype</defName>
+                <Groups>
+                  <!-- 25% of the population has heightened magic abilities -->
+                  <li>
+                    <Endogenes>
+                      <PsychicAbility_Enhanced>0.20</PsychicAbility_Enhanced>
+                      <PsychicAbility_Extreme>0.05</PsychicAbility_Extreme>
+                    </Endogenes>
+                  </li>
+                  <!-- guaranteed mutations -->
+                  <li>
+                    <Endogenes>
+                      <Gene_Necropath>1</Gene_Necropath>
+                    </Endogenes>
+                  </li>
+                  <!-- elemental mutations -->
+                  <li>
+                    <Endogenes>
+                      <Gene_Frostshaper>0.6</Gene_Frostshaper>
+                      <Gene_Conflagrator>0.6</Gene_Conflagrator>
+                      <Gene_Staticlord>0.6</Gene_Staticlord>
+                    </Endogenes>
+                  </li>
+                  <!-- Rare mutations -->
+                  <li>
+                    <Endogenes>
+                      <Gene_Archon>0.1</Gene_Archon>
+                      <Gene_Archotechist>0.15</Gene_Archotechist>
+                      <Gene_Protector>0.2</Gene_Protector>
+                      <Gene_Warlord>0.2</Gene_Warlord>
+                    </Endogenes>
+                  </li>
+                  <!-- Very Rare mutations -->
+                  <li>
+                    <Endogenes>
+                      <Gene_Chronopath>0.15</Gene_Chronopath>
+                      <Gene_Skipmaster>0.15</Gene_Skipmaster>
+                    </Endogenes>
+                  </li>
+                </Groups>
+              </SpawnThoseGenes.SpawnThoseGenesXenotypes>
+            </value>
+          </Operation>
+        </caseTrue>
+      </li>
+    </caseTrue>
+  </Operation>
+</Patch>

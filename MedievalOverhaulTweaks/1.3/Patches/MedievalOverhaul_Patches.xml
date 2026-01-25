@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Medieval Overhaul</li>
+            <li>Medieval Overhaul (unofficial)</li>
+        </mods>
+        <!-- 
+        <match Class="PatchOperationSequence">
+            <operations>
+                <li Class="PatchOperationReplace">
+                    <xpath>/Defs/ThingDef[defName="CampFire"]/costList</xpath>
+                    <value>
+                        <costList>
+                            <DankPyon_RawWood>30</DankPyon_RawWood>
+                        </costList>
+                    </value>
+                </li>
+            </operations>
+        </match>
+    -->
+    </Operation>
+</Patch>

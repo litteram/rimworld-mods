@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Xenogroups
+
+Natural
+  Baseliner
+  Neanderthal
+  Impid
+  Yattakin
+
+Specialised
+  Dirtmole
+  Waster
+  Genie
+  Pigskin
+
+Combat
+  Hussar
+
+Noble
+  Sanguophage
+  Highmate
+-->
+<Patch>
+  <!-- Natural Pawn types -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[defName="Baseliner" or
+                                                          defName="Neanderthal" or
+                                                          defName="Impid" or
+                                                          defName="Yattakin" or
+                                                          defName="VRE_Wolfman" or
+                                                          defName="VRE_Lycan"
+    ]/Groups</xpath>
+    <value>
+      <li>
+        <Endogenes>
+          <Gene_Conflagrator>0.5</Gene_Conflagrator>
+          <Gene_Frostshaper>0.5</Gene_Frostshaper>
+          <Gene_Staticlord>0.5</Gene_Staticlord>
+          <Gene_Wildspeaker>0.5</Gene_Wildspeaker>
+        </Endogenes>
+      </li>
+    </value>
+  </Operation>
+  <!--
+      Melee Combat
+  -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[defName="Baseliner" or
+                                                          defName="Neanderthal" or
+                                                          defName="Hussar" or
+                                                          defName="Yattakin" or
+                                                          defName="Waster" or
+                                                          defName="Sanguophage" or
+                                                          defName="VRE_Wolfman" or
+                                                          defName="VRE_Lycan" or
+                                                          defName="VRE_Strigoi" or
+                                                          defName="VRE_Ekkimian"
+    ]/Groups</xpath>
+    <value>
+      <!-- 45%~60% -->
+      <li>
+        <Endogenes>
+          <Gene_Protector>0.15</Gene_Protector>
+          <Gene_Nightstalker>0.15</Gene_Nightstalker>
+          <Gene_Warlord>0.15</Gene_Warlord>
+          <Gene_Ranger MayRequire="aranmaho.rangerclass">0.15</Gene_Ranger>
+          <Gene_Stunskip MayRequire="rabbit.stuncastervpe3">0.15</Gene_Stunskip>
+        </Endogenes>
+      </li>
+    </value>
+  </Operation>
+  <!--
+      Noble
+  -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[defName="Sanguophage" or
+                                                          defName="Highmate" or
+                                                          defName="Lowmate" or
+                                                          defName="VRE_Bruxa"
+    ]/Groups</xpath>
+    <value>
+      <li>
+        <Endogenes>
+          <Gene_Empath>0.25</Gene_Empath>
+          <Gene_Protector>0.25</Gene_Protector>
+          <Gene_Puppeteer MayRequire="VanillaExpanded.VPE.Puppeteer">0.25</Gene_Puppeteer>
+        </Endogenes>
+      </li>
+    </value>
+  </Operation>
+  <!--
+      Sanguophages
+  -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[defName="Sanguophage" or
+                                                          defName="VRE_Strigoi" or
+                                                          defName="VRE_Ekkimian" or
+                                                          defName="VRE_Bruxa"
+    ]/Groups</xpath>
+    <value>
+      <li>
+        <Endogenes>
+          <Gene_Chronopath>0.4</Gene_Chronopath>
+        </Endogenes>
+      </li>
+      <li>
+        <Endogenes>
+          <Gene_Empath>0.25</Gene_Empath>
+          <Gene_Protector>0.25</Gene_Protector>
+          <Gene_Puppeteer MayRequire="VanillaExpanded.VPE.Puppeteer">0.25</Gene_Puppeteer>
+        </Endogenes>
+      </li>
+    </value>
+  </Operation>
+  <!-- Rare mutations for all -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes/Groups</xpath>
+    <value>
+      <!-- 45% x1 -->
+      <li>
+        <Endogenes>
+          <Gene_Protector>0.15</Gene_Protector>
+          <Gene_Nightstalker>0.15</Gene_Nightstalker>
+          <Gene_Warlord>0.15</Gene_Warlord>
+        </Endogenes>
+      </li>
+      <!-- 30% x1 -->
+      <li>
+        <Endogenes>
+          <Gene_Archon>0.075</Gene_Archon>
+          <Gene_Necropath>0.075</Gene_Necropath>
+          <Gene_Protector>0.075</Gene_Protector>
+          <Gene_Skipmaster>0.075</Gene_Skipmaster>
+        </Endogenes>
+      </li>
+      <!-- 8% x1 -->
+      <li>
+        <Endogenes>
+          <Gene_Archotechist>0.02</Gene_Archotechist>
+          <Gene_Chronopath>0.02</Gene_Chronopath>
+          <Gene_Empath>0.02</Gene_Empath>
+          <Gene_Puppeteer MayRequire="VanillaExpanded.VPE.Puppeteer">0.02</Gene_Puppeteer>
+          <Gene_Stunskip MayRequire="rabbit.stuncastervpe3">0.02</Gene_Stunskip>
+        </Endogenes>
+      </li>
+    </value>
+  </Operation>
+</Patch>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>  
+  <MOT_hygieneIrrigation_title>Medieval Irrigation</MOT_hygieneIrrigation_title>
+  <MOT_hygieneIrrigation_desc>Move Dubs Bad Hygiene's Irrigation to the Medieval age.</MOT_hygieneIrrigation_desc>
+
+  <MOT_hygieneHeating_title>Medieval Central Heating</MOT_hygieneHeating_title>
+  <MOT_hygieneHeating_desc>Move Dubs Bad Hygiene's Central Heating to the Medieval age.</MOT_hygieneHeating_desc>
+  
+  <MOT_vfeClassicalIntegrations_title>VFE Classical Integrations</MOT_vfeClassicalIntegrations_title>
+  <MOT_vfeClassicalIntegrations_desc>Enable use of bronze from VFE Classical, bronze recipe is changed to require Medieval Overhaul Iron</MOT_vfeClassicalIntegrations_desc>
+  
+  <MOT_rimFantasyWork_title>Gemstone mining work</MOT_rimFantasyWork_title>
+  <MOT_rimFantasyWork_desc>Work needed to perform a single mining operation.</MOT_rimFantasyWork_desc>
+  <MOT_rimFantasyProduct_title>Gemstone Results</MOT_rimFantasyProduct_title>
+  <MOT_rimFantasyProduct_desc>Number of Gemstone resulting from a single mining operation.</MOT_rimFantasyProduct_desc>
+  
+  <MOT_defaultSettings>Reset to default</MOT_defaultSettings>
+  <MOT_defaultSettings_tooltip>Reset all settings to default</MOT_defaultSettings_tooltip>
+  
+  <MOT_genericPatches_title>Generic patches (experimental)</MOT_genericPatches_title>
+  <MOT_genericPatches_desc>Experimental generic patches to patch more recipes using non-medieval technology.\n\nFor example: Industrial Components becomes Basic Components.</MOT_genericPatches_desc>
+  
+  <MOT_applyRestart_button>Apply and Restart</MOT_applyRestart_button>
+  <MOT_applyRestart_tooltip>Apply the new settings and restart Rimworld.\n\nWarning: This will restart Rimworld!</MOT_applyRestart_tooltip>
+</LanguageData>

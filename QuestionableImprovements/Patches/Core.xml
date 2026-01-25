@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>zenlor.QuestionableImprovements</modId>
+    <key>basicsDoorSpeedEnabled</key>
+    <defaultValue>false</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.UseSetting">
+        <modId>zenlor.QuestionableImprovements</modId>
+        <key>basicsDoorSpeedAnimalFlap</key>
+        <defaultValue>1.5</defaultValue>
+        <apply>
+          <Operation Class="PatchOperationAdd">
+            <xpath>/Defs/ThingDef[defName="AnimalFlap"]/statBases</xpath>
+            <value>
+              <DoorOpenSpeed>{basicsDoorSpeedAnimalFlap}</DoorOpenSpeed>
+            </value>
+          </Operation>
+        </apply>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>zenlor.QuestionableImprovements</modId>
+    <key>basicsMetalsDontBurn</key>
+    <defaultValue>true</defaultValue>
+    <caseTrue>
+      <Operation Class="XmlExtensions.PatchOperationReplace">
+        <xpath>Defs/ThingDef[defName="Steel" or defName="Silver" or defName="Gold" or defName="Plasteel" or defName="Uranium"]/stuffProps/statFactors/Flammability</xpath>
+        <value><Flammability>0.0</Flammability></value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+
+</Patch>

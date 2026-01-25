@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="XmlExtensions.FindMod">
+    <mods>
+      <li>Clockwork And Steam (Continued)</li>
+      <li>Medieval Overhaul</li>
+    </mods>
+    <logic>and</logic>
+    <caseTrue>
+      <li Class="XmlExtensions.OptionalPatch">
+        <modId>zenlor.MOTweaks</modId>
+        <key>mot-integration-clockwork-steam</key>
+        <defaultValue>True</defaultValue>
+        <caseTrue>
+          <!-- <Operation class="PatchOperationAdd"> -->
+          <!--   <xpath>/Defs</xpath> -->
+          <!--   <value> -->
+          <!--   </value> -->
+          <!-- </Operation> -->
+        </caseTrue>
+      </li>
+    </caseTrue>
+  </Operation>
+</Patch>

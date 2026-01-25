@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="PatchOperationRemove">
+    <success>Always</success>
+    <xpath>Defs/WorkTypeDef/relevantSkills/li[text()="Melee"]</xpath>
+  </Operation>
+
+  <Operation Class="PatchOperationAdd">
+    <xpath>Defs/HediffDef[defName="Ghoul"]/stages/li/statOffsets</xpath>
+    <value>
+      <ToxicResistance>0.5</ToxicResistance>
+    </value>
+  </Operation>
+</Patch>

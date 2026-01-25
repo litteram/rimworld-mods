@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="VFECore.PatchOperationToggableSequence">
+        <enabled>True</enabled>
+        <mods>
+            <li>Medieval Overhaul</li>
+        </mods>
+        <label>Medieval Overhaul Workbench integration:</label>
+        <operations>
+            <li Class="PatchOperationAddModExtension">
+                <xpath>/Defs/ThingDef[defName="DankPyon_Workbench"]</xpath>
+                <value>
+                    <li Class="RecipeInheritance.ThingDefExtension">
+                        <inheritRecipesFrom>
+                            <li>CraftingSpot</li>
+                        </inheritRecipesFrom>
+                    </li>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+
+    <Operation Class="VFECore.PatchOperationToggableSequence">
+        <enabled>True</enabled>
+        <mods>
+            <li>Medieval Overhaul</li>
+        </mods>
+        <label>Medieval Overhaul electric stove integrations:</label>
+        <operations>
+
+            <li Class="PatchOperationAddModExtension">
+                <xpath>/Defs/ThingDef[defName="DankPyon_RusticCookingTable"]</xpath>
+                <value>
+                    <li Class="RecipeInheritance.ThingDefExtension">
+                        <inheritRecipesFrom>
+                            <li>ElectricStove</li>
+                        </inheritRecipesFrom>
+                    </li>
+                </value>
+            </li>
+
+        </operations>
+    </Operation>
+
+    <Operation Class="VFECore.PatchOperationToggableSequence">
+        <enabled>True</enabled>
+        <mods>
+            <li>Medieval Overhaul</li>
+        </mods>
+        <label>Medieval Overhaul electric smithy integrations:</label>
+        <operations>
+
+            <li Class="PatchOperationAddModExtension">
+                <xpath>/Defs/ThingDef[defName="DankPyon_Anvil"]</xpath>
+                <value>
+                    <li Class="RecipeInheritance.ThingDefExtension">
+                        <inheritRecipesFrom>
+                            <li>FueledSmithy</li>
+                        </inheritRecipesFrom>
+                    </li>
+                </value>
+            </li>
+
+            <li Class="PatchOperationAddModExtension">
+                <xpath>/Defs/ThingDef[defName="DankPyon_Anvil"]</xpath>
+                <value>
+                    <li Class="RecipeInheritance.ThingDefExtension">
+                        <inheritRecipesFrom>
+                            <li>ElectricSmithy</li>
+                        </inheritRecipesFrom>
+                    </li>
+                </value>
+            </li>
+
+            <li Class="PatchOperationAddModExtension">
+                <xpath>/Defs/ThingDef[defName="DankPyon_Anvil"]</xpath>
+                <value>
+                    <li Class="RecipeInheritance.ThingDefExtension">
+                        <inheritRecipesFrom>
+                            <li>TableMachining</li>
+                        </inheritRecipesFrom>
+                    </li>
+                </value>
+            </li>
+
+        </operations>
+    </Operation>
+
+    <Operation Class="VFECore.PatchOperationToggableSequence">
+        <enabled>True</enabled>
+        <mods>
+            <li>Medieval Overhaul</li>
+        </mods>
+        <label>Medieval Overhaul electric tailoring bench integrations:</label>
+        <operations>
+
+            <li Class="PatchOperationAddModExtension">
+                <xpath>/Defs/ThingDef[defName="DankPyon_TailorsBench"]</xpath>
+                <value>
+                    <li Class="RecipeInheritance.ThingDefExtension">
+                        <inheritRecipesFrom>
+                            <li>HandTailoringBench</li>
+                        </inheritRecipesFrom>
+                    </li>
+                </value>
+            </li>
+
+            <li Class="PatchOperationAddModExtension">
+                <xpath>/Defs/ThingDef[defName="DankPyon_TailorsBench"]</xpath>
+                <value>
+                    <li Class="RecipeInheritance.ThingDefExtension">
+                        <inheritRecipesFrom>
+                            <li>ElectricTailoringBench</li>
+                        </inheritRecipesFrom>
+                    </li>
+                </value>
+            </li>
+
+        </operations>
+    </Operation>
+
+    <Operation Class="VFECore.PatchOperationToggableSequence">
+        <enabled>False</enabled>
+        <mods>
+            <li>Medieval Overhaul</li>
+        </mods>
+        <label>Medieval Overhaul paceful Dark forest:</label>
+        <operations>
+            <li Class="PatchOperationRemove">
+                <xpath>/Defs/ThingDef[defName="DankPyon_GreatOak"]/comps/li[@Class="MedievalOverhaul.CompProperties_PawnSpawnerOnDestroy"]</xpath>
+            </li>
+        </operations>
+    </Operation>
+
+    <Operation Class="VFECore.PatchOperationToggableSequence">
+        <enabled>False</enabled>
+        <mods>
+            <li>Medieval Overhaul</li>
+        </mods>
+        <label>Medieval Overhaul deadly Dark forest:</label>
+        <operations>
+            <li Class="PatchOperationReplace">
+                <xpath>/Defs/ThingDef[defName="DankPyon_GreatOak"]/comps/li[@Class="MedievalOverhaul.CompProperties_PawnSpawnerOnDestroy"]/chance</xpath>
+                <value>
+                    <chance>0.25</chance>
+                </value>
+            </li>
+        </operations>
+    </Operation>
+
+    <Operation Class="VFECore.PatchOperationToggableSequence">
+        <enabled>False</enabled>
+        <mods>
+            <li>Medieval Overhaul</li>
+        </mods>
+        <label>Generic dangerous Medieval Overhaul recipe patches:</label>
+        <operations>
+
+            <!-- Replace Industrial Components -->
+            <li Class="PatchOperationConditional">
+                <xpath>Defs/ThingDef[costList/ComponentIndustrial][costList[not(DankPyon_ComponentBasic)]]/costList/ComponentIndustrial</xpath>
+                <success>Always</success>
+                <match Class="PatchOperationSetName">
+                    <success>Always</success>
+                    <xpath>Defs/ThingDef[costList/ComponentIndustrial][costList[not(DankPyon_ComponentBasic)]]/costList/ComponentIndustrial</xpath>
+                    <name>DankPyon_ComponentBasic</name>
+                </match>
+            </li>
+
+            <!-- Replace Spacer Components -->
+            <li Class="PatchOperationConditional">
+                <xpath>Defs/ThingDef[costList/ComponentSpacer][costList[not(DankPyon_ComponentBasic)]]/costList/ComponentSpacer</xpath>
+                <success>Always</success>
+                <match Class="PatchOperationSetName">
+                    <success>Always</success>
+                    <xpath>Defs/ThingDef[costList/ComponentSpacer][costList[not(DankPyon_ComponentBasic)]]/costList/ComponentSpacer</xpath>
+                    <name>DankPyon_ComponentBasic</name>
+                </match>
+            </li>
+
+        </operations>
+    </Operation>
+
+    <Operation Class="VFECore.PatchOperationToggableSequence">
+        <enabled>False</enabled>
+        <mods>
+            <li>Medieval Overhaul</li>
+        </mods>
+        <label>Medieval Overhaul Lag-free lamps:</label>
+        <operations>
+
+            <li Class="PatchOperationRemove">
+                <success>Always</success>
+                <xpath>/Defs/ThingDef[defName="DankPyon_WallTorchBase" or
+                defName="DankPyon_WallLamp" or
+                defName="DankPyon_LampPost" or
+                defName="DankPyon_Candles" or
+                defName="DankPyon_Candles_Beeswax" or
+                defName="DankPyon_CandleStand" or
+                defName="DankPyon_CandleStand_Beeswax" or
+                defName="DevDesigner_RusticBloodTorchLamp" or
+                defName="DevDesigner_WallBloodTorch"
+                ]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+            </li>
+
+        </operations>
+    </Operation>
+
+    <Operation Class="VFECore.PatchOperationToggableSequence">
+        <enabled>False</enabled>
+        <mods>
+            <li>Medieval Overhaul</li>
+        </mods>
+        <label>Medieval Overhaul custom scenarios:</label>
+        <operations>
+			<li Class="PatchOperationReplace">
+				<xpath>Defs/ScenarioDef/scenario/parts/li[thingDef="WoodLog"]/thingDef</xpath>
+				<value><thingDef>DankPyon_RawWood</thingDef></value>
+			</li>
+        </operations>
+    </Operation>
+</Patch>

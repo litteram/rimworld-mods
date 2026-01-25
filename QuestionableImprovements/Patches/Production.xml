@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>zenlor.QuestionableImprovements</modId>
+    <key>basicsScavengeComponents</key>
+    <defaultValue>true</defaultValue>
+    <caseFalse>
+      <li Class="PatchOperationRemove">
+        <xpath>Defs/RecipeDef[defName=Make_ComponentIndustrialternive]</xpath>
+      </li>
+    </caseFalse>
+  </Operation>
+</Patch>

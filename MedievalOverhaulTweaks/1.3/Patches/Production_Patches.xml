@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Medieval Overhaul</li>
+            <li>Medieval Overhaul (unofficial)</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+            <operations>
+                <!--
+                This will patch *all* recipes. Scans the whole ThingDef for a
+                `<li>CraftingSpot</li>` and adds the MO Workbench
+                
+                Extremely
+                slow ... but it works if needed
+                -->
+                <!--
+                <li Class="PatchOperationAdd">
+                    <success>Always</success>
+                <xpath>/Defs/ThingDef/recipeMaker/recipeUsers[li/text()="CraftingSpot"]</xpath>
+                <value>
+                        <li>DankPyon_Workbench</li>
+                    </value>
+                </li>
+                -->
+
+                <!--
+                Using VanillaExpandedFramework's RecipeInheritance.dll
+                https://github.com/AndroidQuazar/VanillaExpandedFramework/wiki/Recipes-Inheritance
+                https://github.com/AndroidQuazar/VanillaExpandedFramework/blob/master/Source/RecipeInheritance
+                -->
+                <li Class="PatchOperationAddModExtension">
+                    <xpath>/Defs/ThingDef[defName="DankPyon_Workbench"]</xpath>
+                    <value>
+                        <li Class="RecipeInheritance.ThingDefExtension">
+                            <inheritRecipesFrom>
+                                <li>CraftingSpot</li>
+                            </inheritRecipesFrom>
+                        </li>
+                    </value>
+                </li>
+
+                <!-- Add recipes for both Fueled and Electric stoves, Medieval runs don't have
+                electricity
+                -->
+                <li Class="PatchOperationAddModExtension">
+                    <xpath>/Defs/ThingDef[defName="DankPyon_RusticCookingTable"]</xpath>
+                    <value>
+                        <li Class="RecipeInheritance.ThingDefExtension">
+                            <inheritRecipesFrom>
+                                <li>ElectricStove</li>
+                            </inheritRecipesFrom>
+                        </li>
+                    </value>
+                </li>
+
+                <!-- Add recipes from Tailoring Tables to the Tailoring Bench
+                -->
+                <li Class="PatchOperationAddModExtension">
+                    <xpath>/Defs/ThingDef[defName="DankPyon_TailorsBench"]</xpath>
+                    <value>
+                        <li Class="RecipeInheritance.ThingDefExtension">
+                            <inheritRecipesFrom>
+                                <li>HandTailoringBench</li>
+                            </inheritRecipesFrom>
+                        </li>
+                    </value>
+                </li>
+
+                <!-- Anvil as smithy -->
+                <li Class="PatchOperationAddModExtension">
+                    <xpath>/Defs/ThingDef[defName="DankPyon_Anvil"]</xpath>
+                    <value>
+                        <li Class="RecipeInheritance.ThingDefExtension">
+                            <inheritRecipesFrom>
+                                <li>FueledSmithy</li>
+                            </inheritRecipesFrom>
+                        </li>
+                    </value>
+                </li>
+            </operations>
+        </match>
+    </Operation>
+</Patch>

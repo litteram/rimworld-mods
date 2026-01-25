@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Industrial Concrete</li>
+      </mods>
+    <match Class="PatchOperationSequence">
+      <operations>
+
+        <li Class="XmlExtensions.CreateDocument">
+          <docName>ICPC</docName>
+          <xpath>Defs/ThingDef[defName="IC_PortableConcrete"]</xpath>
+        </li>
+
+        <li Class="XmlExtensions.PatchOperationReplace">
+          <xmlDoc>ICPC</xmlDoc>
+          <xpath>ICPC/ThingDef/statBases/WorkTableWorkSpeedFactor/text()</xpath>
+          <value>1.5</value>
+        </li>
+
+        <li Class="XmlExtensions.PatchOperationAdd">
+          <xmlDoc>ICPC</xmlDoc>
+          <xpath></xpath>
+          <value>
+            <li Class="CompProperties_AffectedByFacilities">
+              <linkableFacilities>
+                <li>ToolCabinet</li>
+              </linkableFacilities>
+            </li>
+          </value>
+        </li>
+
+        <li Class="XmlExtensions.MergeDocument">
+          <docName>ICPC</docName>
+        </li>
+
+      </operations>
+
+    </match>
+  </Operation>
+</Patch>

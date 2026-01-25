@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <GeneDef ParentName="GenePsycastBase" MayRequire="aranmaho.rangerclass">
+    <defName>Gene_Ranger</defName>
+    <label>Ranger</label>
+    <labelShortAdj>Ranger</labelShortAdj>
+    <description>Carriers of this gene can learn the Ranger psycasting path.</description>
+    <iconPath>Gene_Ranger</iconPath>
+    <displayOrderInCategory>522</displayOrderInCategory>
+    <marketValueFactor>2</marketValueFactor>
+  </GeneDef>
+</Defs>

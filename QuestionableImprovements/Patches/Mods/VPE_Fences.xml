@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Furniture Expanded - Architect</li>
+    </mods>
+
+    <match Class="PatchOperationSequence">
+      <operations>
+
+        <!--  Fence  -->
+
+        <li Class="PatchOperationReplace">
+          <xpath>/Defs/ThingDef[
+            defName="VFEArch_ChainlinkFence" or
+            defName="VFEArch_PicketFence" or
+            defName="VFEArch_BrickFence"
+            ]/passability</xpath>
+          <value>
+            <passability>Impassable</passability>
+
+            </value>
+          </li>
+        <li Class="PatchOperationRemove">
+          <xpath>/Defs/ThingDef[
+            defName="VFEArch_ChainlinkFence" or
+            defName="VFEArch_PicketFence" or
+            defName="VFEArch_BrickFence"
+            ]/building/isFence</xpath>
+          </li>
+
+        </operations>
+      </match>
+    </Operation>
+
+  </Patch>

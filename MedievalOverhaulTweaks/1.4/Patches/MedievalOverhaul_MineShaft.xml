@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+  <Operation Class="VFECore.PatchOperationToggableSequence">
+    <enabled>True</enabled>
+    <mods>
+      <li>Medieval Overhaul</li>
+    </mods>
+    <label>Medieval Overhaul mineshaft gems recipe:</label>
+    <operations>
+
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs</xpath>
+        <value>
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_Emerald</defName>
+            <description>Mine deep down underground to obtain and polish a single emerald</description>
+            <workAmount>1200</workAmount>
+            <label>mine an emerald</label>
+            <jobString>Mining 1 emerald.</jobString>
+            <products>
+              <DankPyon_Emerald>1</DankPyon_Emerald>
+            </products>
+          </RecipeDef>
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_EmeraldBulk</defName>
+            <description>Mine deep down underground to obtain and polish up to five emerald gemstones</description>
+            <workAmount>10000</workAmount>
+            <label>mine 5 emerald gemstones</label>
+            <jobString>Mining 5 emerald gemstones</jobString>
+            <products>
+              <DankPyon_Emerald>5</DankPyon_Emerald>
+            </products>
+          </RecipeDef>
+
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_Sapphire</defName>
+            <description>Mine deep down underground to obtain and polish a single sapphire</description>
+            <workAmount>1200</workAmount>
+            <label>mine a sapphire gemstone</label>
+            <jobString>Mining 1 sapphire gemstone</jobString>
+            <products>
+              <DankPyon_Sapphire>1</DankPyon_Sapphire>
+            </products>
+          </RecipeDef>
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_SapphireBulk</defName>
+            <description>Mine deep down underground to obtain and polish up to five sapphire gemstones</description>
+            <workAmount>10000</workAmount>
+            <label>mine a sapphire gemstone</label>
+            <jobString>Mining 5 sapphire gemstones</jobString>
+            <products>
+              <DankPyon_Sapphire>5</DankPyon_Sapphire>
+            </products>
+          </RecipeDef>
+
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_Onyx</defName>
+            <description>Mine deep down underground to obtain and polish a single onyx gemstone</description>
+            <workAmount>1200</workAmount>
+            <label>mine an onyx gemstone</label>
+            <jobString>Mining an onyx gemstone</jobString>
+            <products>
+              <DankPyon_Onyx>1</DankPyon_Onyx>
+            </products>
+          </RecipeDef>
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_OnyxBulk</defName>
+            <description>Mine deep down underground to obtain and polish 5 onyx gemstones</description>
+            <workAmount>10000</workAmount>
+            <label>mine 5 onyx gemstones</label>
+            <jobString>Mining 5 onyx gemstones</jobString>
+            <products>
+              <DankPyon_Onyx>5</DankPyon_Onyx>
+            </products>
+          </RecipeDef>
+
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_Amber</defName>
+            <description>Mine deep down underground to obtain and polish a single amber gemstone</description>
+            <workAmount>1200</workAmount>
+            <label>mine an amber</label>
+            <jobString>Mining 1 amber gemstone</jobString>
+            <products>
+              <DankPyon_Amber>1</DankPyon_Amber>
+            </products>
+          </RecipeDef>
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_AmberBulk</defName>
+            <description>Mine deep down underground to obtain and polish up to 5 amber gemstones</description>
+            <workAmount>10000</workAmount>
+            <label>mine 5 amber gemstone</label>
+            <jobString>Mining 5 amber gemstones</jobString>
+            <products>
+              <DankPyon_Amber>5</DankPyon_Amber>
+            </products>
+          </RecipeDef>
+
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_Citrine</defName>
+            <description>Mine deep down underground to obtain and polish a single citrine</description>
+            <workAmount>1200</workAmount>
+            <label>mine a citrine</label>
+            <jobString>Mining 1 citrine.</jobString>
+            <products>
+              <DankPyon_Citrine>1</DankPyon_Citrine>
+            </products>
+          </RecipeDef>
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_CitrineBulk</defName>
+            <description>Mine deep down underground to obtain and polish a single citrine</description>
+            <workAmount>10000</workAmount>
+            <label>mine a citrine</label>
+            <jobString>Mining 5 citrine.</jobString>
+            <products>
+              <DankPyon_Citrine>5</DankPyon_Citrine>
+            </products>
+          </RecipeDef>
+
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_Ruby</defName>
+            <description>Mine deep down underground to obtain and polish a single ruby gemstone</description>
+            <workAmount>1200</workAmount>
+            <label>mine a ruby</label>
+            <jobString>Mining 1 ruby.</jobString>
+            <products>
+              <DankPyon_Ruby>1</DankPyon_Ruby>
+            </products>
+          </RecipeDef>
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_RubyBulk</defName>
+            <description>Mine deep down underground to obtain and polish a 5 ruby gemstones</description>
+            <workAmount>10000</workAmount>
+            <label>mine a ruby</label>
+            <jobString>Mining 5 ruby.</jobString>
+            <products>
+              <DankPyon_Ruby>5</DankPyon_Ruby>
+            </products>
+          </RecipeDef>
+
+        </value>
+      </li>
+
+    </operations>
+  </Operation>
+  
+  <Operation Class="VFECore.PatchOperationToggableSequence">
+    <enabled>False</enabled>
+    <mods>
+      <li>Medieval Overhaul</li>
+    </mods>
+    <label>Medieval Overhaul mineshaft jade recipe:</label>
+    <operations>
+
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs</xpath>
+        <value>
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_Jade</defName>
+            <description>Mine deep down underground to obtain and polish a single jade gemstone</description>
+            <workAmount>600</workAmount>
+            <label>mine an jade</label>
+            <jobString>Mining 1 jade.</jobString>
+            <products>
+              <Jade>1</Jade>
+            </products>
+          </RecipeDef>
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_JadeBulk</defName>
+            <description>Mine deep down underground to obtain and polish at least 5 jade gemstones</description>
+            <workAmount>5000</workAmount>
+            <label>Mine 5 jade</label>
+            <jobString>Mining 5 jade gemstones.</jobString>
+            <products>
+              <Jade>1</Jade>
+            </products>
+          </RecipeDef>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+  <Operation Class="VFECore.PatchOperationToggableSequence">
+    <enabled>False</enabled>
+    <mods>
+      <li>Medieval Overhaul</li>
+    </mods>
+    <label>Medieval Overhaul mineshaft gold recipe:</label>
+    <operations>
+
+      <li Class="PatchOperationAdd">
+        <xpath>/Defs</xpath>
+        <value>
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_Gold</defName>
+            <description>Mine deep down underground searching for a gold nugget</description>
+            <workAmount>600</workAmount>
+            <label>mine gold</label>
+            <jobString>Mining 1 gold nugget.</jobString>
+            <products>
+              <Gold>1</Gold>
+            </products>
+          </RecipeDef>
+
+          <RecipeDef ParentName="DankPyon_MineShaftBase">
+            <defName>DankPyon_MakeOre_GoldBulk</defName>
+            <description>Mine deep down underground searching for gold nuggets</description>
+            <workAmount>5000</workAmount>
+            <label>mine gold nuggets</label>
+            <jobString>Mining 10 gold nuggets.</jobString>
+            <products>
+              <Gold>10</Gold>
+            </products>
+          </RecipeDef>
+        </value>
+      </li>
+    </operations>
+  </Operation>
+
+</Patch>

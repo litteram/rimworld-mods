@@ -1,0 +1,40 @@
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Medieval Overhaul</li>
+      <li>Medieval Overhaul (unofficial)</li>
+    </mods>
+    <match Class="MOTweaks.PatchOperationSettingActive">
+      <settings>
+        <li>genericPatcher</li>
+      </settings>
+      <active Class="PatchOperationSequence">
+        <operations>
+
+          <!-- Replace Industrial Components -->
+          <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[costList/ComponentIndustrial][costList[not(DankPyon_BasicComponent)]]/costList/ComponentIndustrial</xpath>
+            <success>Always</success>
+            <match Class="PatchOperationSetName">
+              <success>Always</success>
+              <xpath>Defs/ThingDef[costList/ComponentIndustrial][costList[not(DankPyon_BasicComponent)]]/costList/ComponentIndustrial</xpath>
+              <name>DankPyon_BasicComponent</name>
+            </match>
+          </li>
+
+          <!-- Replace Spacer Components -->
+          <li Class="PatchOperationConditional">
+            <xpath>Defs/ThingDef[costList/ComponentSpacer][costList[not(DankPyon_BasicComponent)]]/costList/ComponentSpacer</xpath>
+            <success>Always</success>
+            <match Class="PatchOperationSetName">
+              <success>Always</success>
+              <xpath>Defs/ThingDef[costList/ComponentSpacer][costList[not(DankPyon_BasicComponent)]]/costList/ComponentSpacer</xpath>
+              <name>DankPyon_BasicComponent</name>
+            </match>
+          </li>
+
+        </operations>
+      </active>
+    </match>
+  </Operation>
+</Patch>

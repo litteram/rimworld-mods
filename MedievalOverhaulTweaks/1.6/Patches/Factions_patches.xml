@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+
+  <Operation Class="XmlExtensions.FindMod">
+    <mods>
+      <li>Det's Xenotypes - Stoneborn</li>
+      <li>Medieval Overhaul</li>
+    </mods>
+    <logic>and</logic>
+    <caseTrue>
+
+      <Operation Class="PatchOperationReplace">
+        <xpath>Defs/FactionDef[defName="OutlanderRoughStoneborn"]/techLevel</xpath>
+        <success>Always</success>
+        <value>
+          <techLevel>Medieval</techLevel>
+        </value>
+      </Operation>
+
+    </caseTrue>
+  </Operation>
+</Patch>

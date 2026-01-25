@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation MayRequire="ludeon.Ideology" Class="XmlExtensions.UseSettings">
+    <modId>zenlor.QuestionableImprovements</modId>
+    <keys>
+      <li>ideologyConversionPower</li>
+      <li>ideologyReassurePower</li>
+      <li>ideologyAbilityCooldownLeader</li>
+      <li>ideologyAbilityCooldownMoralist</li>
+      <li>ideologyAbilityCooldownMultiRole</li>
+    </keys>
+    <defaultValues>
+      <li>1</li>
+      <li>1</li>
+      <li>1</li>
+      <li>1</li>
+      <li>1</li>
+    </defaultValues>
+    <apply>
+      <Operation Class="XmlExtensions.PatchOperationMath">
+        <xpath>Defs/AbilityDef[defName="Convert"]/comps/li[@Class="CompProperties_AbilityConvert"]/convertPowerFactor</xpath>
+        <value>{ideologyConversionPower}</value>
+        <operation>*</operation>
+        <rangeMin>
+          <value>0.1</value>
+        </rangeMin>
+      </Operation>
+      <Operation Class="XmlExtensions.PatchOperationMath">
+        <xpath>Defs/AbilityDef[defName="Reassure"]/comps/li[@Class="CompProperties_AbilityReassure"]/baseCertaintyGain</xpath>
+        <value>{ideologyConversionPower}</value>
+        <operation>*</operation>
+        <rangeMin>
+          <value>0.1</value>
+        </rangeMin>
+      </Operation>
+      <!-- Cooldowns -->
+      <Operation Class="XmlExtensions.PatchOperationMath">
+        <xpath>Defs/AbilityGroupDef[defName="Leader"]/cooldownTicks</xpath>
+        <value>{ideologyAbilityCooldownLeader}</value>
+        <operation>*</operation>
+      </Operation>
+      <Operation Class="XmlExtensions.PatchOperationMath">
+        <xpath>Defs/AbilityGroupDef[defName="Moralist"]/cooldownTicks</xpath>
+        <value>{ideologyAbilityCooldownMoralist}</value>
+        <operation>*</operation>
+      </Operation>
+      <Operation Class="XmlExtensions.PatchOperationMath">
+        <xpath>Defs/AbilityGroupDef[defName="MultiRole"]/cooldownTicks</xpath>
+        <value>{ideologyAbilityCooldownMultiRole}</value>
+        <operation>*</operation>
+      </Operation>
+    </apply>
+  </Operation>
+  <Operation Class="XmlExtensions.UseSetting">
+    <modId>zenlor.QuestionableImprovements</modId>
+    <key>ideologyExpectationsOffset</key>
+    <defaultValue>2</defaultValue>
+    <apply>
+      <Operation MayRequire="ludeon.Ideology" Class="PatchOperationReplace">
+        <xpath>/Defs/PreceptDef[
+        defName="IdeoRole_Moralist"
+        or defName="IdeoRole_Leader"
+        or defName="VME_IdeoRole_LeaderSecond"
+        or defName="VME_IdeoRole_LeaderSecond"
+        or defName="VME_IdeoRole_PartyHost"
+        or defName="VME_IdeoRole_Nurse"
+        or defName="VME_IdeoRole_Merchant"
+        or defName="VME_IdeoRole_Mechacker"
+        or defName="VME_IdeoRole_Fleshcrafter"
+        or defName="VME_IdeoRole_InsectoidHerder"
+        or defName="VME_IdeoRole_FireKeeper"
+        or defName="VME_IdeoRole_Commissar"
+        or defName="VME_IdeoRole_LeaderSecond"
+        or defName="VME_IdeoRole_LeaderThird"
+        or defName="VME_IdeoRole_Patissier"
+        or defName="VFEP_IdeoRole_Captain"
+          ]/expectationsOffset</xpath>
+        <value>
+          <expectationsOffset>{ideologyExpectationsOffset}</expectationsOffset>
+        </value>
+      </Operation>
+    </apply>
+  </Operation>
+  <Operation Class="XmlExtensions.OptionalPatch">
+    <modId>zenlor.QuestionableImprovements</modId>
+    <key>{ideologyRoleWorkEnabled}</key>
+    <defaultValue>false</defaultValue>
+    <caseTrue>
+      <Operation Class="PatchOperationReplace" MayRequire="ludeon.Ideology">
+        <xpath>/Defs/PreceptDef/roleDisabledWorkTags</xpath>
+        <value>
+          <roleDisabledWorkTags/>
+        </value>
+      </Operation>
+    </caseTrue>
+  </Operation>
+</Patch>

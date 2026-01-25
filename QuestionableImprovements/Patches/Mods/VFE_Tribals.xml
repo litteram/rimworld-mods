@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="PatchOperationFindMod">
+    <mods>
+      <li>Vanilla Factions Expanded - Tribals</li>
+    </mods>
+    <match Class="PatchOperationAdd"> <!-- Add culture as prerequisites -->
+      <xpath>Defs/ResearchProjectDef[not(prerequisites) and not(defName="VFET_Fire")]</xpath>
+      <value>
+        <prerequisites><li>VFET_Culture</li></prerequisites>
+      </value>
+    </match>
+  </Operation>
+</Patch>

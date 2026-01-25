@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+	<Operation Class="VFECore.PatchOperationToggableSequence">
+		<enabled>True</enabled>
+		<mods>
+			<li>Packed Sand and Dirt</li>
+			<li>Alpha Biomes</li>
+		</mods>
+		<label>Packed Sand and Dirt patches:</label>
+		<operations>
+
+			<li Class="PatchOperationAdd">
+				<xpath>Defs/TerrainDef[defName="AB_GrassyFlowerySoil" or
+					defName="AB_FertileGrassyFlowerySoil"
+				]/affordances</xpath>
+				<value>
+					<li>PackableSoil</li>
+				</value>
+			</li>
+		</operations>
+	</Operation>
+</Patch>

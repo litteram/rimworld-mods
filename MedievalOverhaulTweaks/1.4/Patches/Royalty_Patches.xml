@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+  <Operation Class="VFECore.PatchOperationToggableSequence">
+    <enabled>True</enabled>
+    <mods>
+      <li>Royalty</li>
+    </mods>
+    <label>Royalty medieval:</label>
+
+    <operations>
+      <li Class="PatchOperationReplace">
+        <xpath>/Defs/ResearchProjectDef[defName="Piano"]/techLevel</xpath>
+        <value>
+          <techLevel>Medieval</techLevel>
+        </value>
+      </li>
+    </operations>
+
+  </Operation>
+</Patch>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Patch>
+    <Operation Class="PatchOperationFindMod">
+        <mods>
+            <li>Royalty</li>
+        </mods>
+        <match Class="PatchOperationSequence">
+          <operations>
+            <li Class="PatchOperationReplace">
+              <xpath>/Defs/ResearchProjectDef[defName="Piano"]/techLevel</xpath>
+              <value>
+                <techLevel>Medieval</techLevel>
+              </value>
+            </li>
+          </operations>
+        </match>
+    </Operation>
+</Patch>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+  <packageId>zenlor.psygenespawner</packageId>
+  <name>Psycast Gene Spawner fork</name>
+  <author>zenlor</author>
+  <supportedVersions>
+    <li>1.6</li>
+  </supportedVersions>
+  <modDependencies>
+    <li>
+      <packageId>VanillaExpanded.VPsycastsE</packageId>
+      <displayName>Vanilla Psycast Expanded</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2842502659</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>Danzen.VPE.BiotechIntegration</packageId>
+      <displayName>Vanilla Psycast Expanded - Biotech Integration</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3110971925</steamWorkshopUrl>
+    </li>
+    <li>
+      <packageId>nera.spawnthosegenes</packageId>
+      <displayName>[BT] SpawnThoseGenes!</displayName>
+      <steamWorkshopUrl>https://steamcommunity.com/workshop/filedetails/?id=2898044088</steamWorkshopUrl>
+    </li>
+  </modDependencies>
+  <loadAfter>
+    <li>vanillaexpanded.vpe.puppeteer</li>
+    <li>vanillaexpanded.vpe.hemosage</li>
+    <li>vanillaracesexpanded.pigskin</li>
+    <li>vanillaracesexpanded.highmate</li>
+    <li>vanillaracesexpanded.lycanthrope</li>
+    <li>vanillaracesexpanded.sanguophage</li>
+    <li>VanillaExpanded.VPE.Hemosage</li>
+    <li>VanillaExpanded.VPE.Puppeteer</li>
+    <li>aranmaho.rangerclass</li>
+  </loadAfter>
+  <incompatibleWith>
+    <li>seromas.BiotechIntegrationTweaks</li>
+  </incompatibleWith>
+  <description><![CDATA[
+    Add Random chanches for pawns to receive psycast genes.
+
+    Every pawn has a certain random chance to mutate and contract a new psycast
+    gene on creation.
+
+    Pawn Xenotypes are categorized by nature:
+
+    Natural pawns:
+    - Baseliners
+    - Neanderthal
+    - Impid
+    - Yattakin
+    - Garunleankin (VRE)
+    - Animakin (VRE)
+    - Wolfman (VRE)
+    - Lycan (VRE)
+    - Boarskin (VRE)
+    - Pigskin
+
+    Aggressive pawns:
+    - Hussar (only if they are not Psychically Dull or Deaf)
+    - Waster
+    - Wolfman (VRE)
+    - Boarskin (VRE)
+
+    Noble pawns:
+    - Hussar
+    - Highmate
+    - Lowmate
+    - Sanguophage
+    - Sanguophage - Strigoi
+    - Sanguophage - Ekkimian
+    - Sanguophage - Bruxa
+
+    When a new pawn is created this mod will bestow a new psycast level in a
+    random available psycast path and a base ability.
+
+    The Vanilla Psycast Expanded option "Chance ...xxx second FIXME" have a
+    chance to bestow up to 9 psycast levels. 
+
+    The base psycast level is 2: one point to open a random path and another for
+    a random level 1 ability.
+
+    Added gene support for paths:
+    - VPE Hemosage
+    - VPE Puppeteer
+    - VPE - Ranger
+    - Edge of descension - Stuncaster 3.0
+
+    NOTE: This mod has a mild incompatability with mods that add new genes or psycast paths.
+  ]]></description>
+</ModMetaData>
