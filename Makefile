@@ -1,7 +1,7 @@
 SYNC_CMD := rsync -rav --delete --delete-excluded --exclude-from '.gitignore' --exclude '.git'
 SYNC_TARGET := "${HOME}/.steam/steam/steamapps/common/RimWorld/Mods/"
 
-MODS := AnomalyHotfix PsycasterGenesSpawner QuestionableImprovements MedievalOverhaulTweaks
+MODS := AnomalyHotfix PsycasterGenesSpawner QuestionableImprovements MedievalOverhaulTweaks OrganizedResearchTech
 
 .PHONY: all
 all: ${MODS}

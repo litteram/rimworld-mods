@@ -57,7 +57,7 @@
     <ItemGroup>
         <Compile Include="CompProperties_UseEffectGivePsycasterGene.cs"/>
         <Compile Include="CompUseEffect_GivePsycasterGene.cs"/>
-        <Compile Include="GeneDefOf.cs"/>
+        <Compile Include="GeneDefOf.cs" />
         <Compile Include="Patch_LifeStageWorker_HumanlikeAdult.cs"/>
         <Compile Include="Patch_PostfixGenerator.cs"/>
         <Compile Include="Patch_RitualOutcomeEffectWorker_AnimaTreeLinking.cs"/>

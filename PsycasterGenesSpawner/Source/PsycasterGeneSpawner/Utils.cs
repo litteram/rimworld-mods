@@ -21,11 +21,13 @@ namespace PsycasterGeneSpawner
             return pawn.genes.GenesListForReading
                 .Select(gene => gene.def)
                 .Intersect(AvaliablePsycasterGenes)
-                .RandomElementWithFallback(null);
+                .RandomElementWithFallback(fallback: null);
         }
 
         public static Hediff_PsycastAbilities GivePsylink(Pawn pawn)
         {
+            if (Rand.Value > PsycastsMod.Settings.baseSpawnChance) return null;
+            
             if (pawn.health.hediffSet.GetFirstHediffOfDef(HediffDefOf.PsychicAmplifier) is not Hediff_Psylink psylink)
             {
                 psylink = HediffMaker
@@ -33,7 +35,7 @@ namespace PsycasterGeneSpawner
                     Hediff_Psylink;
                 pawn.health.AddHediff(psylink);
             }
-
+            
             Hediff_PsycastAbilities implant =
                 pawn.health.hediffSet.GetFirstHediffOfDef(VPE_DefOf.VPE_PsycastAbilityImplant) as
                     Hediff_PsycastAbilities ??
@@ -51,7 +53,7 @@ namespace PsycasterGeneSpawner
             PsycasterPathDef path =
                 DefDatabase<PsycasterPathDef>.AllDefsListForReading
                     .Where(path => path.requiredGene == psycasterGene)
-                    .FirstOrFallback(null);
+                    .FirstOrFallback(fallback: null);
 
             if (path == null)
             {
@@ -85,6 +87,7 @@ namespace PsycasterGeneSpawner
             var abilityNumber = (int)(PsycastsMod.Settings.additionalAbilityChance/r)+1;
             foreach (AbilityDef[] level in path.abilityLevelsInOrder)
             {
+                if (!level.HasData()) break;
                 if (abilityNumber == 0) break;
                 foreach (AbilityDef ab in level)
                 {

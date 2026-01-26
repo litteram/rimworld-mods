@@ -102,7 +102,7 @@
             <key>mot-lagfree-lamps</key>
             <label>Lag-free lamps and torches</label>
             <defaultValue>false</defaultValue>
-            <tooltip>Remove the fuel comp from most Medieval Overhaul torches and lamps</tooltip>
+            <tooltip>NOTE: please use the new Medieval Overhaul's settings</tooltip>
           </li>
           <li Class="XmlExtensions.Setting.Checkbox">
             <key>mot-milkable-rox</key>

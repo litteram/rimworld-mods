@@ -10,20 +10,15 @@ namespace PsycasterGeneSpawner
     {
         public static void Postfix(Pawn pawn)
         {
-            // Is the pawn dull?
-            if (pawn.genes.HasActiveGene(GeneDefOf.PsychicAbility_Deaf)) return;
-            if (pawn.genes.HasActiveGene(GeneDefOf.PsychicAbility_Dull)) return;
+            if (pawn.psychicEntropy.PsychicSensitivity < 100 || pawn.DevelopmentalStage != DevelopmentalStage.Adult) return;
 
             GeneDef psycasterGene = Utils.GetRandomPsycasterGene(pawn);
             if (psycasterGene == null) return;
 
-            if (pawn.DevelopmentalStage == DevelopmentalStage.Adult)
-            {
-                Hediff_PsycastAbilities implant = Utils.GivePsylink(pawn);
-                
-                if (implant != null) 
-                    Utils.GivePsycasterPath(pawn, psycasterGene, implant);
-            }
+            Hediff_PsycastAbilities implant = Utils.GivePsylink(pawn);
+            if (implant == null) return;
+
+            Utils.GivePsycasterPath(pawn, psycasterGene, implant);
         }
     }
 }

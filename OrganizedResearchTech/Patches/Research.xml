@@ -1,183 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Patch>
-    <Operation Class="XmlExtensions.CreateDocument">
-        <docName>ResearchProjects</docName>
-        <xpath>Defs/ResearchProjectDef[not(knowledgeCost)]</xpath>
-    </Operation>
+  <Operation Class="XmlExtensions.CreateDocument">
+    <docName>ResearchProjects</docName>
+    <xpath>Defs/ResearchProjectDef[not(knowledgeCost)]</xpath>
+  </Operation>
 
-    <!-- Neolithic -->
-    <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+  <Operation Class="PatchOperationSequence">
+    <operations>
+
+      <!-- ModPatches -->
+      <li Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+        <xmlDoc>ResearchProjects</xmlDoc>
+        <xpath>ResearchProjects/ResearchProjectDef[defName="TF_Stonestacking"]/techLevel</xpath>
+        <success>Always</success>
+        <value>
+          <techLevel>Neolithic</techLevel>
+        </value>
+      </li>
+
+      <!-- Neolithic -->
+      <li Class="XmlExtensions.PatchOperationSafeAddOrReplace">
         <xmlDoc>ResearchProjects</xmlDoc>
         <xpath>ResearchProjects/ResearchProjectDef[techLevel="Neolithic"]</xpath>
         <value>
-            <tab>Main</tab>
+          <tab>Main</tab>
         </value>
-    </Operation>
+      </li>
+    </operations>
+  </Operation>
 
-    <!-- Medieval -->
-    <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+
+  <Operation Class="PatchOperationSequence">
+    <operations>
+
+      <!-- Medieval -->
+      <li Class="XmlExtensions.PatchOperationSafeAddOrReplace">
         <xmlDoc>ResearchProjects</xmlDoc>
         <xpath>ResearchProjects/ResearchProjectDef[techLevel="Medieval"]</xpath>
         <value>
-            <tab>SRT_MedievalResearch</tab>
+          <tab>SRT_MedievalResearch</tab>
         </value>
-    </Operation>
+      </li>
 
-    <!-- Industrial -->
-    <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+    </operations>
+  </Operation>
+
+  <!-- Industrial -->
+  <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+    <xmlDoc>ResearchProjects</xmlDoc>
+    <xpath>ResearchProjects/ResearchProjectDef[techLevel="Industrial"]</xpath>
+    <value>
+      <tab>SRT_IndustrialResearch</tab>
+    </value>
+  </Operation>
+
+  <!-- Industrial split -->
+  <Operation Class="PatchOperationSequence">
+    <!-- <success>Always</success> -->
+    <operations>
+
+      <!-- move Microelectronics to Hi-Tech (should help with the layout) -->
+      <li Class="XmlExtensions.PatchOperationSafeAddOrReplace">
         <xmlDoc>ResearchProjects</xmlDoc>
-        <xpath>ResearchProjects/ResearchProjectDef[techLevel="Industrial"]</xpath>
+        <xpath>ResearchProjects/ResearchProjectDef[defName="MicroelectronicsBasics"]</xpath>
         <value>
-            <tab>SRT_IndustrialResearch</tab>
+          <tab>SRT_IndustrialResearchI</tab>
         </value>
-    </Operation>
+      </li>
 
-    <!-- Industrial split -->
-    <Operation Class="PatchOperationSequence">
-        <!-- <success>Always</success> -->
-        <operations>
-
-        <!-- move Microelectronics to Hi-Tech (should help with the layout) -->
-        <li Class="XmlExtensions.PatchOperationSafeAddOrReplace">
-            <xmlDoc>ResearchProjects</xmlDoc>
-            <xpath>ResearchProjects/ResearchProjectDef[defName="MicroelectronicsBasics"]</xpath>
-            <value>
-                <tab>SRT_IndustrialResearchI</tab>
-            </value>
-        </li>
-
-        <li Class="XmlExtensions.PatchOperationSafeAddOrReplace">
-            <xmlDoc>ResearchProjects</xmlDoc>
-            <xpath>ResearchProjects/ResearchProjectDef[requiredResearchBuilding="HiTechResearchBench"]</xpath>
-            <value>
-                <tab>SRT_IndustrialResearchI</tab>
-            </value>
-        </li>
-
-        <!-- move MultiAnalyzer to not(Silicon )(should help with the layout) -->
-        <li Class="XmlExtensions.PatchOperationSafeAddOrReplace">
-            <xmlDoc>ResearchProjects</xmlDoc>
-            <xpath>ResearchProjects/ResearchProjectDef[defName="MultiAnalyzer"]</xpath>
-            <value>
-                <tab>SRT_IndustrialResearchII</tab>
-            </value>
-        </li>
-
-        <li Class="XmlExtensions.PatchOperationSafeAddOrReplace">
-            <xmlDoc>ResearchProjects</xmlDoc>
-            <xpath>ResearchProjects/ResearchProjectDef[requiredResearchFacilities/li="MultiAnalyzer"]</xpath>
-            <value>
-                <tab>SRT_IndustrialResearchII</tab>
-            </value>
-        </li>
-
-        </operations>
-    </Operation>
-
-    <!-- Spacer -->
-    <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+      <li Class="XmlExtensions.PatchOperationSafeAddOrReplace">
         <xmlDoc>ResearchProjects</xmlDoc>
-        <xpath>ResearchProjects/ResearchProjectDef[techLevel="Spacer"]</xpath>
-        <success>Always</success>
+        <xpath>ResearchProjects/ResearchProjectDef[requiredResearchBuilding="HiTechResearchBench"]</xpath>
         <value>
-            <tab>SRT_SpacerResearch</tab>
+          <tab>SRT_IndustrialResearchI</tab>
         </value>
-    </Operation>
+      </li>
 
-    <!-- Ultra -->
-    <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+      <!-- move MultiAnalyzer to not(Silicon )(should help with the layout) -->
+      <li Class="XmlExtensions.PatchOperationSafeAddOrReplace">
         <xmlDoc>ResearchProjects</xmlDoc>
-        <xpath>ResearchProjects/ResearchProjectDef[techLevel="Ultra"]</xpath>
-        <success>Always</success>
+        <xpath>ResearchProjects/ResearchProjectDef[defName="MultiAnalyzer"]</xpath>
         <value>
-            <tab>SRT_UltraResearch</tab>
+          <tab>SRT_IndustrialResearchII</tab>
         </value>
-    </Operation>
+      </li>
 
-    <!-- Ultra -->
-    <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+      <li Class="XmlExtensions.PatchOperationSafeAddOrReplace">
         <xmlDoc>ResearchProjects</xmlDoc>
-        <xpath>ResearchProjects/ResearchProjectDef[techLevel="Archotech"]</xpath>
-        <success>Always</success>
+        <xpath>ResearchProjects/ResearchProjectDef[requiredResearchFacilities/li="MultiAnalyzer"]</xpath>
         <value>
-            <tab>SRT_ArchotechResearch</tab>
+          <tab>SRT_IndustrialResearchII</tab>
         </value>
-    </Operation>
-    <!--
+      </li>
+
+    </operations>
+  </Operation>
+
+  <!-- Spacer -->
+  <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+    <xmlDoc>ResearchProjects</xmlDoc>
+    <xpath>ResearchProjects/ResearchProjectDef[techLevel="Spacer"]</xpath>
+    <success>Always</success>
+    <value>
+      <tab>SRT_SpacerResearch</tab>
+    </value>
+  </Operation>
+
+  <!-- Ultra -->
+  <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+    <xmlDoc>ResearchProjects</xmlDoc>
+    <xpath>ResearchProjects/ResearchProjectDef[techLevel="Ultra"]</xpath>
+    <success>Always</success>
+    <value>
+      <tab>SRT_UltraResearch</tab>
+    </value>
+  </Operation>
+
+  <!-- Ultra -->
+  <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace">
+    <xmlDoc>ResearchProjects</xmlDoc>
+    <xpath>ResearchProjects/ResearchProjectDef[techLevel="Archotech"]</xpath>
+    <success>Always</success>
+    <value>
+      <tab>SRT_ArchotechResearch</tab>
+    </value>
+  </Operation>
+  <!--
     Expansions
-    -->
-    <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.biotech">
-        <xmlDoc>ResearchProjects</xmlDoc>
-        <xpath>ResearchProjects/ResearchProjectDef[@ParentName="MechtechBase" and not(tab="Anomaly")]</xpath>
-        <value>
-            <tab>SRT_IndustrialResearch</tab>
-        </value>
-    </Operation>
+  -->
+  <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.biotech">
+    <xmlDoc>ResearchProjects</xmlDoc>
+    <xpath>ResearchProjects/ResearchProjectDef[@ParentName="MechtechBase" and not(tab="Anomaly")]</xpath>
+    <value>
+      <tab>SRT_IndustrialResearch</tab>
+    </value>
+  </Operation>
 
-    <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.royalty">
-        <xmlDoc>ResearchProjects</xmlDoc>
-        <xpath>ResearchProjects/ResearchProjectDef[@ParentName="BaseBodyPartEmpire_TierA" and not(@Abstract="True")]</xpath>
-        <value>
-            <tab>SRT_SpacerResearch</tab>
-        </value>
-    </Operation>
+  <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.royalty">
+    <xmlDoc>ResearchProjects</xmlDoc>
+    <xpath>ResearchProjects/ResearchProjectDef[@ParentName="BaseBodyPartEmpire_TierA" and not(@Abstract="True")]</xpath>
+    <value>
+      <tab>SRT_SpacerResearch</tab>
+    </value>
+  </Operation>
 
-    <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.royalty">
-        <xmlDoc>ResearchProjects</xmlDoc>
-        <xpath>ResearchProjects/ResearchProjectDef[@ParentName="BaseBodyPartEmpire_TierB" and not(@Abstract="True")]</xpath>
-        <value>
-            <tab>SRT_UltraResearch</tab>
-        </value>
-    </Operation>
+  <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.royalty">
+    <xmlDoc>ResearchProjects</xmlDoc>
+    <xpath>ResearchProjects/ResearchProjectDef[@ParentName="BaseBodyPartEmpire_TierB" and not(@Abstract="True")]</xpath>
+    <value>
+      <tab>SRT_UltraResearch</tab>
+    </value>
+  </Operation>
 
-    <!--
-        Biotech
-    -->
+  <!--
+    Biotech
+  -->
 
-    <!-- Standard Mechtech -->
-    <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.biotech">
-        <xmlDoc>ResearchProjects</xmlDoc>
-        <xpath>ResearchProjects/ResearchProjectDef[defName="StandardMechtech"]</xpath>
-        <value>
-            <tab>SRT_IndustrialResearchI</tab>
-        </value>
-    </Operation>
+  <!-- Standard Mechtech -->
+  <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.biotech">
+    <xmlDoc>ResearchProjects</xmlDoc>
+    <xpath>ResearchProjects/ResearchProjectDef[defName="StandardMechtech"]</xpath>
+    <value>
+      <tab>SRT_IndustrialResearchI</tab>
+    </value>
+  </Operation>
 
-    <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.biotech">
-        <xmlDoc>ResearchProjects</xmlDoc>
-        <xpath>ResearchProjects/ResearchProjectDef[prerequisites/li="StandardMechtech"]</xpath>
-        <value>
-            <tab>SRT_IndustrialResearchI</tab>
-        </value>
-    </Operation>
+  <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.biotech">
+    <xmlDoc>ResearchProjects</xmlDoc>
+    <xpath>ResearchProjects/ResearchProjectDef[prerequisites/li="StandardMechtech"]</xpath>
+    <value>
+      <tab>SRT_IndustrialResearchI</tab>
+    </value>
+  </Operation>
 
-    <!-- High Mechtech -->
-    <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.biotech">
-        <xmlDoc>ResearchProjects</xmlDoc>
-        <xpath>ResearchProjects/ResearchProjectDef[defName="HighMechtech"]</xpath>
-        <value>
-            <tab>SRT_IndustrialResearchII</tab>
-        </value>
-    </Operation>
+  <!-- High Mechtech -->
+  <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.biotech">
+    <xmlDoc>ResearchProjects</xmlDoc>
+    <xpath>ResearchProjects/ResearchProjectDef[defName="HighMechtech"]</xpath>
+    <value>
+      <tab>SRT_IndustrialResearchII</tab>
+    </value>
+  </Operation>
 
-    <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.biotech">
-        <xmlDoc>ResearchProjects</xmlDoc>
-        <xpath>ResearchProjects/ResearchProjectDef[prerequisites/li="HighMechtech"]</xpath>
-        <value>
-            <tab>SRT_IndustrialResearchII</tab>
-        </value>
-    </Operation>
+  <Operation Class="XmlExtensions.PatchOperationSafeAddOrReplace" MayRequire="ludeon.rimworld.biotech">
+    <xmlDoc>ResearchProjects</xmlDoc>
+    <xpath>ResearchProjects/ResearchProjectDef[prerequisites/li="HighMechtech"]</xpath>
+    <value>
+      <tab>SRT_IndustrialResearchII</tab>
+    </value>
+  </Operation>
 
-    <!-- END -->
-    <Operation Class="XmlExtensions.MergeDocument">
-        <docName>ResearchProjects</docName>
-    </Operation>
+  <!-- END -->
+  <Operation Class="XmlExtensions.MergeDocument">
+    <docName>ResearchProjects</docName>
+  </Operation>
 
-    <Operation Class="PatchOperationReplace">
-        <xpath>Defs/ResearchTabDef[defName="Main"]/label</xpath>
-        <value>
-            <label>Neolithic</label>
-        </value>
-    </Operation>
+  <Operation Class="PatchOperationReplace">
+    <xpath>Defs/ResearchTabDef[defName="Main"]/label</xpath>
+    <value>
+      <label>Neolithic</label>
+    </value>
+  </Operation>
 
 </Patch>

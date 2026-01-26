@@ -22,7 +22,22 @@ Noble
   Highmate
 -->
 <Patch>
-  <!-- Natural Pawn types -->
+  <!--
+    Naturally occurring Pawn mutations
+  -->
+  <Operation Class="PatchOperationAdd">
+    <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes/Groups</xpath>
+    <value>
+      <li>
+        <Endogenes>
+          <PsychicAbility_Deaf>0.4</PsychicAbility_Deaf>
+          <PsychicAbility_Dull>0.2</PsychicAbility_Dull>
+          <PsychicAbility_Enhanced>0.10</PsychicAbility_Enhanced>
+          <PsychicAbility_Extreme>0.05</PsychicAbility_Extreme>
+        </Endogenes>
+      </li>
+    </value>
+  </Operation>
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[defName="Baseliner" or
                                                           defName="Neanderthal" or
@@ -43,7 +58,7 @@ Noble
     </value>
   </Operation>
   <!--
-      Melee Combat
+      Melee Combat focused pawns
   -->
   <Operation Class="PatchOperationAdd">
     <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[defName="Baseliner" or
@@ -95,7 +110,8 @@ Noble
     <xpath>/Defs/SpawnThoseGenes.SpawnThoseGenesXenotypes[defName="Sanguophage" or
                                                           defName="VRE_Strigoi" or
                                                           defName="VRE_Ekkimian" or
-                                                          defName="VRE_Bruxa"
+                                                          defName="VRE_Bruxa" or
+                                                          defName="RS_Charmweaver"
     ]/Groups</xpath>
     <value>
       <li>
@@ -133,14 +149,14 @@ Noble
           <Gene_Skipmaster>0.075</Gene_Skipmaster>
         </Endogenes>
       </li>
-      <!-- 8% x1 -->
+      <!-- 9% x1 -->
       <li>
         <Endogenes>
-          <Gene_Archotechist>0.02</Gene_Archotechist>
-          <Gene_Chronopath>0.02</Gene_Chronopath>
-          <Gene_Empath>0.02</Gene_Empath>
-          <Gene_Puppeteer MayRequire="VanillaExpanded.VPE.Puppeteer">0.02</Gene_Puppeteer>
-          <Gene_Stunskip MayRequire="rabbit.stuncastervpe3">0.02</Gene_Stunskip>
+          <Gene_Archotechist>0.03</Gene_Archotechist>
+          <Gene_Chronopath>0.03</Gene_Chronopath>
+          <Gene_Empath>0.03</Gene_Empath>
+          <Gene_Puppeteer MayRequire="VanillaExpanded.VPE.Puppeteer">0.03</Gene_Puppeteer>
+          <Gene_Stunskip MayRequire="rabbit.stuncastervpe3">0.03</Gene_Stunskip>
         </Endogenes>
       </li>
     </value>

@@ -10,5 +10,11 @@ pkgs.mkShell {
     # mono stuff
     ilspycmd
     avalonia-ilspy
+
+    # steam uploading
+    steamcmd
   ];
+
+  env = {
+  };
 }

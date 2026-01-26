@@ -123,6 +123,9 @@
           </li>
         </caseTrue>
       </li>
+    <!--
+      MO includes a patch now
+
       <li Class="XmlExtensions.OptionalPatch">
         <modId>zenlor.MOTweaks</modId>
         <key>mot-lagfree-lamps</key>
@@ -140,10 +143,14 @@
             defName="DankPyon_CandleStand_Beeswax" or
             defName="DevDesigner_RusticBloodTorchLamp" or
             defName="DevDesigner_WallBloodTorch"
-              )]/comps/li[@Class="CompProperties_Refuelable"]</xpath>
+              )]/comps/li[
+              @Class="CompProperties_Refuelable" or
+              @Class="MedievalOverhaul.CompProperties_StoreFuelThing"
+            ]</xpath>
           </li>
         </caseTrue>
       </li>
+      -->
       <li Class="XmlExtensions.OptionalPatch">
         <modId>zenlor.MOTweaks</modId>
         <key>mot-scenario-fix</key>

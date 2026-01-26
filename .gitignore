@@ -10,3 +10,5 @@ PsycasterGenesSpawner/Source/bin/
 .idea
 .vs
 /build
+*.vdf
+**/obj/*

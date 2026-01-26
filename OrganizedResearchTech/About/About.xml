@@ -18,6 +18,7 @@ Split research by tech level.
   <loadAfter>
     <li>Mlie.OrganizedResearchTab</li>
     <li>OskarPotocki.VFE.Tribals</li>
+    <li>OskarPotocki.VFE.Medieval</li>
     <li>OskarPotocki.VWEMS</li>
     <li>OskarPotocki.VanillaFactionsExpanded.Core</li>
     <li>VanillaExpanded.VMemesE</li>

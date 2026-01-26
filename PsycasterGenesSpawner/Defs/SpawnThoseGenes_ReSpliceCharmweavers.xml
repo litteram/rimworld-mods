@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <SpawnThoseGenes.SpawnThoseGenesXenotypes MayRequire="resplice.xotr.charmweavers">
+    <defName>RS_Charmweaver</defName>
+    <Groups>
+      <li>
+        <Endogenes>
+          <PsychicAbility_Enhanced>0.05</PsychicAbility_Enhanced>
+          <PsychicAbility_Extreme>0.01</PsychicAbility_Extreme>
+        </Endogenes>
+      </li>
+      <li>
+        <Endogenes>
+          <Gene_Empath>1</Gene_Empath>
+        </Endogenes>
+      </li>
+    </Groups>
+  </SpawnThoseGenes.SpawnThoseGenesXenotypes>
+</Defs>
