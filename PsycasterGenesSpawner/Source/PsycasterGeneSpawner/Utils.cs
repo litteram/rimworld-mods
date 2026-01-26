@@ -51,7 +51,7 @@ namespace PsycasterGeneSpawner
             PsycasterPathDef path =
                 DefDatabase<PsycasterPathDef>.AllDefsListForReading
                     .Where(path => path.requiredGene == psycasterGene)
-                    .FirstOrFallback();
+                    .FirstOrFallback(null);
 
             if (path == null)
             {
@@ -60,18 +60,20 @@ namespace PsycasterGeneSpawner
                 return;
             }
 
-            implant.UnlockPath(path);
+            if (!implant.unlockedPaths.Contains(path))
+            {
+                implant.UnlockPath(path);
+            }
 
             CompAbilities comp = pawn.GetComp<CompAbilities>();
             if (comp == null) return;
 
-            if (implant.level == 0) implant.ChangeLevel(1, false);
-            AbilityDef mainAbility = path.abilityLevelsInOrder[0].RandomElement();
+            AbilityDef mainAbility = path.abilityLevelsInOrder.First().RandomElement();
             if (mainAbility != null)
             {
                 comp.GiveAbility(mainAbility);
+                implant.ChangeLevel(1, false);
             }
-            implant.ChangeLevel(1, false);
 
             var r = Rand.Value;
             if (r > PsycastsMod.Settings.additionalAbilityChance)
@@ -80,19 +82,22 @@ namespace PsycasterGeneSpawner
                 return;
             }
 
-
-            var ability_number = (int)(r / (PsycastsMod.Settings.additionalAbilityChance / 3)) + 1;
-            Log.Message("pawn " + pawn.NameShortColored + " receives " + ability_number + " abilities");
-
-            foreach (AbilityDef[] level in path.abilityLevelsInOrder.Take(ability_number))
-            foreach (AbilityDef ab in level)
+            var abilityNumber = (int)(PsycastsMod.Settings.additionalAbilityChance/r)+1;
+            foreach (AbilityDef[] level in path.abilityLevelsInOrder)
             {
-                if (comp.HasAbility(ab)) {
-                    continue;
+                if (abilityNumber == 0) break;
+                foreach (AbilityDef ab in level)
+                {
+                    if (abilityNumber == 0) break;
+                    if (comp.HasAbility(ab))
+                    {
+                        continue;
+                    }
+
+                    comp.GiveAbility(ab);
+                    implant.ChangeLevel(1, false);
+                    abilityNumber--;
                 }
-                
-                comp.GiveAbility(ab);
-                implant.ChangeLevel(1, false);
             }
 
             implant.points = 0;
