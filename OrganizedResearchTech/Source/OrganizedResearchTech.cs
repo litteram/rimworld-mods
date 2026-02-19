@@ -1,4 +1,4 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Verse;
@@ -6,30 +6,109 @@ using HarmonyLib;
 using JetBrains.Annotations;
 using RimWorld;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 namespace OrganizedResearchTech
-{
+{ 
+    [StaticConstructorOnStartup]
     public class OrganizedResearchTech : Mod
     {
         public OrganizedResearchTech(ModContentPack content) : base(content)
         {
+            Harmony harmony1 = new("zenlor.OrganizedResearchTech");
+            harmony1.PatchAll(Assembly.GetExecutingAssembly());
+            
             Settings = GetSettings<OrganizedResearchTechSettings>();
+            ResearchWeights.Initialize(Settings);
         }
+        
+        public override string SettingsCategory() => "Organized Research Tech";
+        
+        private string newDefName = "Main";
+        private string newWeightStr = "10";
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
+            base.DoSettingsWindowContents(inRect);
+            
             var listingStandard = new Listing_Standard();
             listingStandard.Begin(inRect);
             listingStandard.ColumnWidth = inRect.width / 2.05f;
 
-            listingStandard.Label("Organized Research Tech".Translate(Settings.Something.ToString()));
+            listingStandard.Label("Research Tab Weights".Translate());
             listingStandard.GapLine();
-            var section = listingStandard.BeginSection(-1);
 
-            section.ButtonText("Foo");
+            var weights = Settings.ResearchWeights.ToList();
+            var keysToRemove = new List<string>();
+            
+            var labelWidth = 140f;
+            var fieldPadding = 24f;
+            var numFieldWidth = 48f;
+            var fieldWidth = labelWidth - fieldPadding - labelWidth;
 
-            listingStandard.EndSection(section);
+            for (int i = 0; i < weights.Count; i++)
+            {
+                var entry = weights[i];
+                var rowRect = listingStandard.GetRect(30f);
+                var fieldNewWidth = rowRect.width - fieldPadding - numFieldWidth;
+
+                var defNameRect = new Rect(rowRect.x, rowRect.y, fieldNewWidth, 24f);
+                var weightRect = new Rect(rowRect.x + fieldNewWidth + fieldPadding, rowRect.y, numFieldWidth, 24f);
+                var deleteRect = new Rect(rowRect.x + fieldNewWidth + fieldPadding + numFieldWidth + fieldPadding, rowRect.y, 24f, 24f);
+
+                var editKey = entry.Key;
+                var editValue = entry.Value.ToString();
+
+                editKey = Widgets.TextField(defNameRect, editKey);
+                editValue = Widgets.TextField(weightRect, editValue);
+
+                if (int.TryParse(editValue, out var newValue))
+                {
+                    if (editKey != entry.Key || newValue != entry.Value)
+                    {
+                        keysToRemove.Add(entry.Key);
+                        Settings.ResearchWeights[editKey] = newValue;
+                    }
+                }
+
+                if (Widgets.ButtonText(deleteRect, "X", false))
+                {
+                    keysToRemove.Add(entry.Key);
+                }
+
+                listingStandard.Gap(5f);
+            }
+
+            foreach (var key in keysToRemove)
+            {
+                Settings.ResearchWeights.Remove(key);
+            }
+
+            listingStandard.GapLine();
+
+            var newRowRect = listingStandard.GetRect(30f);
+            var fieldNewNewWidth = newRowRect.width - fieldPadding - numFieldWidth;
+
+            var newDefNameRect = new Rect(newRowRect.x, newRowRect.y, fieldNewNewWidth, 24f);
+            newDefName = Widgets.TextField(newDefNameRect, newDefName);
+            
+            var newWeightStrRect = new Rect(newRowRect.x + fieldNewNewWidth + fieldPadding, newRowRect.y, numFieldWidth, 24f);
+            newWeightStr = Widgets.TextField(newWeightStrRect, newWeightStr);
+
+            if (listingStandard.ButtonText("Add"))
+            {
+                if (int.TryParse(newWeightStr, out var newWeight) && !string.IsNullOrWhiteSpace(newDefName))
+                {
+                    Settings.ResearchWeights[newDefName] = newWeight;
+                }
+            }
+
+            listingStandard.GapLine();
+
+            if (listingStandard.ButtonText("Reset to Defaults"))
+            {
+                Settings.Reset();
+            }
+
             listingStandard.End();
         }
 
@@ -38,104 +117,37 @@ namespace OrganizedResearchTech
 
     public class OrganizedResearchTechSettings : ModSettings
     {
-        public bool Something;
+        public Dictionary<string, int> ResearchWeights = new Dictionary<string, int>
+        {
+            { "SRT_BasicsResearch",       0 },
+            { "SRT_NeolithicResearch",    1 },
+            { "SRT_MedievalResearch",     2 },
+            { "SRT_IndustrialResearch",   3 },
+            { "SRT_IndustrialResearchI",  4 },
+            { "SRT_IndustrialResearchII", 4 },
+            { "SRT_SpacerResearch",       6 },
+            { "SRT_UltraResearch",        7 },
+        };
 
         public override void ExposeData()
         {
             base.ExposeData();
-            Scribe_Values.Look(ref this.Something, "Something");
+            Scribe_Collections.Look(ref ResearchWeights, "ResearchWeights", LookMode.Undefined, LookMode.Value);
         }
 
         public void Reset()
         {
-            Something = false;
-        }
-    }
-
-    // ReSharper disable once InconsistentNaming
-    [StaticConstructorOnStartup]
-    public static class OrganizedResearchTechStartup
-    {
-        static OrganizedResearchTechStartup()
-        {
-            new Harmony("zenlor.OrganizedResearchTech").PatchAll(Assembly.GetExecutingAssembly());
-        }
-    }
-
-    [HarmonyPatch(typeof(MainTabWindow_Research), "PostOpen")]
-    [UsedImplicitly]
-    class MainTabWindow_Research_PatchPostOpen
-    {
-        [UsedImplicitly]
-        static void Postfix(ref List<MainTabWindow_Research.ResearchTabRecord> ___tabs)
-        {
-            IEnumerable<ResearchProjectDef> db = DefDatabase<ResearchProjectDef>.AllDefsListForReading;
-            var cmp = new ResearchComparer();
-
-            ___tabs = ___tabs.FindAll(record => db.Any(def => def.tab.Equals(record.def)))
-                    .OrderBy(r => r.def, cmp)
-                    .ToList();
-        }
-    }
-
-    /*
-    [HarmonyPatch(typeof(MainTabWindow_Research), "PostOpen")]
-    class MainTabWindow_Research_PatchPostOpenAllDefs
-    {
-        [UsedImplicitly]
-        public static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
-        {
-            MethodInfo getAllDefs = AccessTools.Property(typeof(DefDatabase<RimWorld.ResearchTabDef>), "AllDefs")
-                .GetGetMethod();
-            MethodInfo getAllAllowedDefs = AccessTools.Method(
-                typeof(MainTabWindow_Research_PatchPostOpenAllDefs),
-                "AllowedTabDefs",
-                null,
-                null
-                );
-
-            // This is a strange way to Transpile, but ok, it works.
-            List<CodeInstruction> instructionList = new List<CodeInstruction>(instructions);
-            int num;
-            for (int i = 0; i < instructionList.Count; i = num + 1)
+            ResearchWeights = new Dictionary<string, int>
             {
-                CodeInstruction instruction = instructionList[i];
-                bool flag = instruction.opcode == OpCodes.Call && instruction.OperandIs(getAllDefs);
-                if (flag)
-                {
-                    //Log.Message("MainTabWindow_Research.DrawRightRect match 1 of 1", false);
-                    yield return instruction;
-                    instruction = new CodeInstruction(OpCodes.Call, getAllAllowedDefs);
-                }
-
-                yield return instruction;
-                instruction = null;
-                num = i;
-            }
-
-            yield break;
-
-        }
-
-        [UsedImplicitly]
-        private static IEnumerable<ResearchTabDef> AllowedTabDefs(IEnumerable<ResearchTabDef> originalList)
-        {
-            var db = DefDatabase<ResearchProjectDef>.AllDefs;
-            return originalList.Where(def =>
-                db.Any(i => !i.IsHidden && i.tab.defName == def.defName || def.defName == "Anomaly")
-            ).OrderBy<ResearchTabDef, ResearchTabDef>(def => def, new ResearchComparer());
+                { "SRT_BasicsResearch",       0 },
+                { "SRT_NeolithicResearch",    1 },
+                { "SRT_MedievalResearch",     2 },
+                { "SRT_IndustrialResearch",   3 },
+                { "SRT_IndustrialResearchI",  4 },
+                { "SRT_IndustrialResearchII", 4 },
+                { "SRT_SpacerResearch",       6 },
+                { "SRT_UltraResearch",        7 },
+            };
         }
     }
-    */
-
-    /*
-    [HarmonyPatch(typeof(MainTabWindow_Research), "ListProjects")]
-    class MainTabWindow_Research_PatchBeforeListProjects
-    {
-        static void Prefix(Rect _rightInRect, ref bool _elementClicked)
-        { 
-            
-        }
-    }
-    */
 }

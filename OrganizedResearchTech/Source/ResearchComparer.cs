@@ -1,23 +1,29 @@
 using System.Collections.Generic;
+using Verse;
 using RimWorld;
 
 namespace OrganizedResearchTech
 {
     public static class ResearchWeights
     {
-        public static Dictionary<string, int> weigts = new Dictionary<string, int>
+        private static Dictionary<string, int> _weights;
+
+        public static Dictionary<string, int> weigts
         {
-            { "SRT_BasicsResearch",       0 },
-            { "SRT_NeolithicResearch",    1 },
-            { "SRT_MedievalResearch",     2 },
-            { "SRT_IndustrialResearch",   3 },
-            { "SRT_IndustrialResearchI",  4 },
-            { "SRT_IndustrialResearchII", 4 },
-            { "SRT_SpacerResearch",       6 },
-            { "SRT_UltraResearch",        7 },
-        };
-        
-        // public static List<string> testData = new List<string>{"Main", "Anomaly", "SRT_BasicsResearch", "SRT_NeolithicResearch", "SRT_MedievalResearch", "SRT_IndustrialResearch", "SRT_HighTechResearch",  "SRT_SiliconResearch", "SRT_UltraResearch"};
+            get
+            {
+                if (_weights == null)
+                {
+                    return new Dictionary<string, int>();
+                }
+                return _weights;
+            }
+        }
+
+        public static void Initialize(OrganizedResearchTechSettings settings)
+        {
+            _weights = settings.ResearchWeights;
+        }
     }
 
     public class ResearchComparer: IComparer<ResearchTabDef>

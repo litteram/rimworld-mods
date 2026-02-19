@@ -39,6 +39,7 @@
         <Publicize Include="Assembly-CSharp:RimWorld.MainTabWindow_Research+ResearchTabRecord" />
     </ItemGroup> 
     <ItemGroup>
+        <Compile Include="HarmonyPatches.cs" />
         <Compile Include="OrganizedResearchTech.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="ResearchComparer.cs" />
