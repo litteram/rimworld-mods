@@ -37,11 +37,11 @@
     </PropertyGroup>
     <ItemGroup>
         <Publicize Include="Assembly-CSharp:RimWorld.MainTabWindow_Research+ResearchTabRecord" />
-        <Publicize Include="Assembly-CSharp"/>
     </ItemGroup> 
     <ItemGroup>
         <Compile Include="OrganizedResearchTech.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
+        <Compile Include="ResearchComparer.cs" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Krafs.Publicizer" Version="2.3.0">

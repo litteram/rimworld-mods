@@ -1,12 +1,12 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Reflection.Emit;
 using Verse;
 using HarmonyLib;
 using JetBrains.Annotations;
 using RimWorld;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace OrganizedResearchTech
 {
@@ -63,6 +63,23 @@ namespace OrganizedResearchTech
     }
 
     [HarmonyPatch(typeof(MainTabWindow_Research), "PostOpen")]
+    [UsedImplicitly]
+    class MainTabWindow_Research_PatchPostOpen
+    {
+        [UsedImplicitly]
+        static void Postfix(ref List<MainTabWindow_Research.ResearchTabRecord> ___tabs)
+        {
+            IEnumerable<ResearchProjectDef> db = DefDatabase<ResearchProjectDef>.AllDefsListForReading;
+            var cmp = new ResearchComparer();
+
+            ___tabs = ___tabs.FindAll(record => db.Any(def => def.tab.Equals(record.def)))
+                    .OrderBy(r => r.def, cmp)
+                    .ToList();
+        }
+    }
+
+    /*
+    [HarmonyPatch(typeof(MainTabWindow_Research), "PostOpen")]
     class MainTabWindow_Research_PatchPostOpenAllDefs
     {
         [UsedImplicitly]
@@ -73,7 +90,7 @@ namespace OrganizedResearchTech
             MethodInfo getAllAllowedDefs = AccessTools.Method(
                 typeof(MainTabWindow_Research_PatchPostOpenAllDefs),
                 "AllowedTabDefs",
-                null, 
+                null,
                 null
                 );
 
@@ -106,9 +123,10 @@ namespace OrganizedResearchTech
             var db = DefDatabase<ResearchProjectDef>.AllDefs;
             return originalList.Where(def =>
                 db.Any(i => !i.IsHidden && i.tab.defName == def.defName || def.defName == "Anomaly")
-            );
+            ).OrderBy<ResearchTabDef, ResearchTabDef>(def => def, new ResearchComparer());
         }
     }
+    */
 
     /*
     [HarmonyPatch(typeof(MainTabWindow_Research), "ListProjects")]

@@ -23,7 +23,7 @@
         <xmlDoc>ResearchProjects</xmlDoc>
         <xpath>ResearchProjects/ResearchProjectDef[techLevel="Neolithic"]</xpath>
         <value>
-          <tab>Main</tab>
+          <tab>SRT_NeolithicResearch</tab>
         </value>
       </li>
     </operations>
@@ -193,13 +193,6 @@
   <!-- END -->
   <Operation Class="XmlExtensions.MergeDocument">
     <docName>ResearchProjects</docName>
-  </Operation>
-
-  <Operation Class="PatchOperationReplace">
-    <xpath>Defs/ResearchTabDef[defName="Main"]/label</xpath>
-    <value>
-      <label>Neolithic</label>
-    </value>
   </Operation>
 
 </Patch>

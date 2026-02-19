@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <ResearchTabDef>
+    <defName>SRT_NeolithicResearch</defName>
+    <label>Neolithic</label>
+  </ResearchTabDef>
+  <ResearchTabDef>
     <defName>SRT_MedievalResearch</defName>
     <label>Medieval</label>
   </ResearchTabDef>
