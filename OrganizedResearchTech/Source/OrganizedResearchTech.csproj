@@ -43,6 +43,7 @@
         <Compile Include="OrganizedResearchTech.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
         <Compile Include="ResearchComparer.cs" />
+        <Compile Include="Utils.cs" />
     </ItemGroup>
     <ItemGroup>
         <PackageReference Include="Krafs.Publicizer" Version="2.3.0">
@@ -54,6 +55,30 @@
         <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all">
           <IncludeAssets>compile; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+    </ItemGroup>
+    <ItemGroup>
+        <Reference Include="System" />
+        <Reference Include="Assembly-CSharp">
+            <HintPath>$(NuGetPackageRoot)\krafs.rimworld.ref\1.6.4633\ref\net472\Assembly-CSharp.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine">
+            <HintPath>$(NuGetPackageRoot)\krafs.rimworld.ref\1.6.4633\ref\net472\UnityEngine.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.CoreModule">
+            <HintPath>$(NuGetPackageRoot)\krafs.rimworld.ref\1.6.4633\ref\net472\UnityEngine.CoreModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.UI">
+            <HintPath>$(NuGetPackageRoot)\krafs.rimworld.ref\1.6.4633\ref\net472\UnityEngine.UI.dll</HintPath>
+        </Reference>
+        <Reference Include="0Harmony">
+            <HintPath>$(NuGetPackageRoot)\lib.harmony\2.3.6\lib\net472\0Harmony.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.TextRenderingModule">
+            <HintPath>$(NuGetPackageRoot)\krafs.rimworld.ref\1.6.4633\ref\net472\UnityEngine.TextRenderingModule.dll</HintPath>
+        </Reference>
+        <Reference Include="UnityEngine.IMGUIModule">
+            <HintPath>$(NuGetPackageRoot)\krafs.rimworld.ref\1.6.4633\ref\net472\UnityEngine.IMGUIModule.dll</HintPath>
+        </Reference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
@@ -70,9 +95,6 @@
         <ProjectReference>
             <Private>False</Private>
         </ProjectReference>
-        <PackageReference>
-            <ExcludeAssets>runtime</ExcludeAssets>
-        </PackageReference>
     </ItemDefinitionGroup>
 
 </Project>
