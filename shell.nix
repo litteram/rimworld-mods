@@ -10,6 +10,13 @@ pkgs.mkShell {
     # mono stuff
     ilspycmd
     avalonia-ilspy
+    avalonia
+    omnisharp-roslyn
+
+    msbuild
+    dotnet-sdk
+    mono4
+    mono6
 
     # steam uploading
     steamcmd

@@ -3,6 +3,29 @@
   <Operation Class="XmlExtensions.FindMod">
     <success>Always</success>
     <mods>
+      <li>ReBuild: Doors and Corners</li>
+      <li>Vanilla Factions Expanded - Tribals</li>
+    </mods>
+    <logic>and</logic>
+    <caseTrue>
+
+      <li Class="XmlExtensions.PatchOperationAddOrReplace">
+        </value>
+        <xpath>Defs/ThingDef[@Name="RB_WallBase"]/researchPrerequisites</xpath>
+        <value>
+          <researchPrerequisites>
+            <li>VFET_Construction</li>
+          </researchPrerequisites>
+        </value>
+
+      </li>
+
+    </caseTrue>
+  </Operation>
+
+  <Operation Class="XmlExtensions.FindMod">
+    <success>Always</success>
+    <mods>
       <li>Medieval Overhaul</li>
       <li>Vanilla Factions Expanded - Tribals</li>
     </mods>

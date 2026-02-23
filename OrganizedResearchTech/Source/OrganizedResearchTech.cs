@@ -6,42 +6,59 @@ using HarmonyLib;
 using JetBrains.Annotations;
 using RimWorld;
 using UnityEngine;
-using Verse.Sound;
 
 namespace OrganizedResearchTech
 {
 
-    [StaticConstructorOnStartup]
     [UsedImplicitly]
     public class OrganizedResearchTech : Mod
     {
+        public static OrganizedResearchTech Instance;
         protected OrganizedResearchTechSettings Settings;
         private List<ResearchTabDef> allTabs;
+        private bool cacheInitialized;
 
         public OrganizedResearchTech(ModContentPack content) : base(content)
         {
+            Instance = this;
             Harmony harmony1 = new("zenlor.OrganizedResearchTech");
             harmony1.PatchAll(Assembly.GetExecutingAssembly());
 
             Settings = GetSettings<OrganizedResearchTechSettings>();
-            ResearchTabs.Initialize(Settings);
-            allTabs = DefDatabase<ResearchTabDef>.AllDefsListForReading;
+            LongEventHandler.ExecuteWhenFinished(EnsureCacheInitialized);
         }
 
         public override string SettingsCategory() => "Organized Research Tech";
 
         private Vector2 scrollPosition;
 
-        private void RefreshTabs()
+        public void EnsureCacheInitialized()
+        {
+            if (cacheInitialized) return;
+            cacheInitialized = true;
+            allTabs = DefDatabase<ResearchTabDef>.AllDefsListForReading;
+            if (Settings.TabDefNames == null || Settings.TabDefNames.Count == 0)
+            {
+                Settings.Reset();
+            }
+            ResearchTabs.Initialize(Settings);
+        }
+
+        public void ForceReinitialize()
+        {
+            cacheInitialized = false;
+            EnsureCacheInitialized();
+        }
+
+        private void OnSettingsChanged()
         {
             ResearchTabs.Initialize(Settings);
         }
 
         public override void DoSettingsWindowContents(Rect inRect)
         {
+            EnsureCacheInitialized();
             base.DoSettingsWindowContents(inRect);
-
-            Widgets.Label(new Rect(inRect.x, inRect.y, inRect.width, 30f), "ORT_ResearchTabs".Translate());
 
             float buttonY = inRect.y + 35f;
             Rect addTabRect = new Rect(inRect.x, buttonY, 120f, 30f);
@@ -54,8 +71,8 @@ namespace OrganizedResearchTech
                 {
                     addOptions.Add(new FloatMenuOption(tabDef.label, () =>
                     {
-                        Settings.ResearchTabList.Add(new ResearchTabEntry(tabDef));
-                        RefreshTabs();
+                        Settings.TabDefNames.Add(tabDef.defName);
+                        OnSettingsChanged();
                     }));
                 }
                 Find.WindowStack.Add(new FloatMenu(addOptions));
@@ -64,18 +81,19 @@ namespace OrganizedResearchTech
             if (Widgets.ButtonText(resetRect, "Reset to Defaults"))
             {
                 Settings.Reset();
-                RefreshTabs();
+                OnSettingsChanged();
             }
 
-            float listHeight = Settings.ResearchTabList.Count * 30f;
+            float listHeight = Settings.TabDefNames.Count * 30f;
             Rect viewRect = new Rect(inRect.x, buttonY + 35f, inRect.width - 16f, inRect.height - 70f);
             Rect scrollRect = new Rect(0f, 0f, viewRect.width, listHeight);
 
             Widgets.BeginScrollView(viewRect, ref scrollPosition, scrollRect);
 
-            for (int idx = 0; idx < Settings.ResearchTabList.Count; idx++)
+            for (int idx = 0; idx < Settings.TabDefNames.Count; idx++)
             {
-                var entry = Settings.ResearchTabList[idx];
+                string defName = Settings.TabDefNames[idx];
+                ResearchTabDef tabDef = DefDatabase<ResearchTabDef>.GetNamed(defName, errorOnFail: false);
                 float rowY = idx * 30f;
 
                 Rect upBtnRect = new Rect(0f, rowY, 30f, 30f);
@@ -100,31 +118,31 @@ namespace OrganizedResearchTech
                 {
                     if (idx > 0)
                     {
-                        var item = Settings.ResearchTabList[idx];
-                        Settings.ResearchTabList.RemoveAt(idx);
-                        Settings.ResearchTabList.Insert(idx - 1, item);
-                        RefreshTabs();
+                        string item = Settings.TabDefNames[idx];
+                        Settings.TabDefNames.RemoveAt(idx);
+                        Settings.TabDefNames.Insert(idx - 1, item);
+                        OnSettingsChanged();
                     }
                 }
                 GUI.enabled = true;
 
-                if (idx == Settings.ResearchTabList.Count - 1)
+                if (idx == Settings.TabDefNames.Count - 1)
                 {
                     GUI.enabled = false;
                 }
                 if (Widgets.ButtonText(downBtnRect, "▼", false))
                 {
-                    if (idx < Settings.ResearchTabList.Count - 1)
+                    if (idx < Settings.TabDefNames.Count - 1)
                     {
-                        var item = Settings.ResearchTabList[idx];
-                        Settings.ResearchTabList.RemoveAt(idx);
-                        Settings.ResearchTabList.Insert(idx + 1, item);
-                        RefreshTabs();
+                        string item = Settings.TabDefNames[idx];
+                        Settings.TabDefNames.RemoveAt(idx);
+                        Settings.TabDefNames.Insert(idx + 1, item);
+                        OnSettingsChanged();
                     }
                 }
                 GUI.enabled = true;
 
-                string label = entry.TabDef != null ? $"{idx + 1}. {entry.TabDef.label}" : $"{idx + 1}. (missing)";
+                string label = tabDef != null ? $"{idx + 1}. {tabDef.label}" : $"{idx + 1}. ({defName})";
                 TextAnchor prevAnchor = Text.Anchor;
                 Text.Anchor = TextAnchor.MiddleLeft;
                 Widgets.Label(rowRect, label);
@@ -135,12 +153,12 @@ namespace OrganizedResearchTech
                     Event.current.Use();
                     List<FloatMenuOption> options = new List<FloatMenuOption>();
                     int capturedIdx = idx;
-                    foreach (var tabDef in allTabs)
+                    foreach (var otherTabDef in allTabs)
                     {
-                        options.Add(new FloatMenuOption(tabDef.label, () =>
+                        options.Add(new FloatMenuOption(otherTabDef.label, () =>
                         {
-                            Settings.ResearchTabList[capturedIdx] = new ResearchTabEntry(tabDef);
-                            RefreshTabs();
+                            Settings.TabDefNames[capturedIdx] = otherTabDef.defName;
+                            OnSettingsChanged();
                         }));
                     }
                     Find.WindowStack.Add(new FloatMenu(options));
@@ -148,28 +166,13 @@ namespace OrganizedResearchTech
 
                 if (Widgets.ButtonText(removeBtnRect, "X", false))
                 {
-                    Settings.ResearchTabList.RemoveAt(idx);
-                    RefreshTabs();
+                    Settings.TabDefNames.RemoveAt(idx);
+                    OnSettingsChanged();
                 }
             }
 
             Widgets.EndScrollView();
         }
-    }
-
-    public class ResearchTabEntry
-    {
-        public ResearchTabDef TabDef;
-        public string DefName => TabDef?.defName;
-
-        public ResearchTabEntry() { }
-
-        public ResearchTabEntry(ResearchTabDef tabDef)
-        {
-            TabDef = tabDef;
-        }
-
-        public override string ToString() => DefName ?? "null";
     }
 
     public static class ResearchTabs
@@ -178,22 +181,20 @@ namespace OrganizedResearchTech
 
         public static void Initialize(OrganizedResearchTechSettings settings)
         {
-            Tabs = settings.ResearchTabList
-                .Where(entry => entry.TabDef != null)
-                .Select(entry => entry.TabDef)
+            Tabs = settings.TabDefNames
+                .Select(name => DefDatabase<ResearchTabDef>.GetNamed(name, errorOnFail: false))
+                .Where(def => def != null)
                 .ToList();
         }
     }
 
     public class OrganizedResearchTechSettings : ModSettings
     {
-        private List<string> defNames = new List<string>();
-        public List<ResearchTabEntry> ResearchTabList = new List<ResearchTabEntry>();
+        public List<string> TabDefNames = new List<string>();
 
         private static readonly string[] defaultTabDefNames =
         [
             "VFET_Basics",
-            "SRT_BasicsResearch",
             "SRT_NeolithicResearch",
             "SRT_MedievalResearch",
             "SRT_IndustrialResearch",
@@ -201,62 +202,20 @@ namespace OrganizedResearchTech
             "SRT_IndustrialResearchII",
             "SRT_SpacerResearch",
             "SRT_UltraResearch",
+            "SRT_ArchotechResearch",
             "Anomaly"
         ];
 
-        public OrganizedResearchTechSettings()
-        {
-            Log.Message($"[ORT] Constructor called, ResearchTabList count: {ResearchTabList.Count}");
-        }
-
         public override void ExposeData()
         {
-            Log.Message($"[ORT] ExposeData called, mode: {Scribe.mode}, defNames count before: {defNames?.Count ?? -1}, ResearchTabList count: {ResearchTabList?.Count ?? -1}");
-            
-            if (Scribe.mode == LoadSaveMode.Saving)
-            {
-                defNames = ResearchTabList
-                    .Where(e => e.DefName != null)
-                    .Select(e => e.DefName)
-                    .ToList();
-                Log.Message($"[ORT] Saving, defNames synced: {string.Join(", ", defNames)}");
-            }
             base.ExposeData();
-            Scribe_Collections.Look(ref defNames, "ResearchTabList", LookMode.Value);
-            Log.Message($"[ORT] After Look, defNames count: {defNames?.Count ?? -1}, values: {(defNames != null ? string.Join(", ", defNames) : "null")}");
-            
-            if (Scribe.mode == LoadSaveMode.PostLoadInit)
-            {
-                if (defNames == null || defNames.Count == 0)
-                {
-                    Log.Message("[ORT] PostLoadInit: defNames empty, calling Reset");
-                    Reset();
-                }
-                else
-                {
-                    Log.Message($"[ORT] PostLoadInit: calling ApplyLoadedData with {defNames.Count} items");
-                    ApplyLoadedData();
-                }
-            }
-        }
-
-        public void ApplyLoadedData()
-        {
-            ResearchTabList = defNames
-                .Select(name => new ResearchTabEntry(DefDatabase<ResearchTabDef>.GetNamed(name, errorOnFail: false)))
-                .Where(entry => entry.TabDef != null)
-                .ToList();
-            Log.Message($"[ORT] ApplyLoadedData: ResearchTabList count after: {ResearchTabList.Count}");
+            Scribe_Collections.Look(ref TabDefNames, "ResearchTabList", LookMode.Value);
         }
 
         public void Reset()
         {
-            ResearchTabList = defaultTabDefNames
-                .Select(name => new ResearchTabEntry(DefDatabase<ResearchTabDef>.GetNamed(name, errorOnFail: false)))
-                .Where(entry => entry.TabDef != null)
-                .ToList();
-            defNames = ResearchTabList.Select(e => e.DefName).ToList();
-            Log.Message($"[ORT] Reset: ResearchTabList count: {ResearchTabList.Count}, defNames: {string.Join(", ", defNames)}");
+            TabDefNames = defaultTabDefNames.ToList()
+                .FindAll(name => DefDatabase<ResearchTabDef>.GetNamed(name, errorOnFail: false) != null);
         }
     }
 }

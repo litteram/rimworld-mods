@@ -7,6 +7,17 @@ using Verse;
 
 namespace OrganizedResearchTech
 {
+    [HarmonyPatch(typeof(Game), "FinalizeInit")]
+    [UsedImplicitly]
+    class Game_FinalizeInit_Patch
+    {
+        [UsedImplicitly]
+        static void Postfix()
+        {
+            OrganizedResearchTech.Instance?.ForceReinitialize();
+        }
+    }
+
     [HarmonyPatch(typeof(MainTabWindow_Research), "PostOpen")]
     [UsedImplicitly]
     class MainTabWindow_Research_PatchPostOpen
